@@ -1,0 +1,3058 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HardToCrack — Privacidad Total para Perfiles VIP y Empresa</title>
+<meta name="description" content="Pack todo incluido de privacidad digital para particulares VIP y pequeñas empresas. Pixel + GrapheneOS + VPN + eSIM + accesorios + soporte técnico. Llave en mano.">
+
+<script async src="https://plausible.io/js/pa-JXaWiUnTvrHmq9GvRt2Pe.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #05070a;
+    --bg2: #0b0e14;
+    --bg3: #0f131a;
+    --surface: #121824;
+    --surface2: #182232;
+    --border: #1b2637;
+    --border2: #24354f;
+    --accent: #00e5ff;
+    --accent2: #00b0ff;
+    --accent3: #00ff9d;
+    --warn: #ff7643;
+    --text: #f0f5fa;
+    --text2: #a3b8cc;
+    --text3: #5c7f99;
+    --mono: 'Space Mono', monospace;
+    --sans: 'Syne', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--accent2); border-radius: 2px; }
+
+  /* NOISE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.35;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(5,7,10,0.94);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 1.2rem;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+  }
+
+  .nav-logo span { color: var(--accent3); }
+
+  nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  nav a {
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: var(--mono);
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--accent); }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%) !important;
+    color: var(--bg) !important;
+    padding: 0.5rem 1.4rem;
+    border-radius: 4px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0,229,255,0.2);
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 5% 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: 15%;
+    right: -5%;
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle, rgba(0,229,255,0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-glow2 {
+    position: absolute;
+    bottom: -5%;
+    left: -5%;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(0,255,157,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 750px;
+  }
+
+  .hero-tag {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent3);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: var(--accent3);
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 .accent { color: var(--accent); text-shadow: 0 0 20px rgba(0,229,255,0.2); }
+  h1 .accent-green { color: var(--accent3); }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--text2);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    font-weight: 400;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+    color: var(--bg);
+    padding: 1rem 2.2rem;
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    border-radius: 4px;
+    transition: all 0.2s;
+    display: inline-block;
+    box-shadow: 0 4px 20px rgba(0,229,255,0.25);
+  }
+
+  .btn-primary:hover {
+    background: #fff;
+    color: var(--bg);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255,255,255,0.3);
+  }
+
+  .btn-secondary {
+    border: 1px solid var(--border2);
+    color: var(--text2);
+    padding: 1rem 2.2rem;
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    border-radius: 4px;
+    transition: all 0.2s;
+    display: inline-block;
+    background: rgba(255,255,255,0.02);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(0,229,255,0.05);
+  }
+
+  .btn-phone {
+    background: linear-gradient(135deg, var(--accent3) 0%, #00b0ff 100%);
+    color: var(--bg);
+    box-shadow: 0 4px 20px rgba(0,255,157,0.2);
+  }
+
+  .hero-stats {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.4rem 1.6rem;
+    border-radius: 6px;
+    text-align: center;
+    min-width: 160px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+
+  .stat-num {
+    font-family: var(--mono);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* SECTIONS */
+  section { padding: 100px 5%; }
+
+  .section-tag {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    line-height: 1.15;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* WHY SECTION */
+  .why-section {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .why-intro {
+    max-width: 750px;
+    margin-bottom: 4rem;
+  }
+
+  .why-intro p {
+    color: var(--text2);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .why-card {
+    background: var(--bg2);
+    padding: 2.5rem;
+    transition: background 0.2s;
+  }
+
+  .why-card:hover { background: var(--surface); }
+
+  .why-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .why-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .why-card p {
+    font-size: 0.95rem;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+
+  .threat-list {
+    margin-top: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .threat-item {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--warn);
+    padding: 0.4rem 0.6rem;
+    background: rgba(255,118,67,0.08);
+    border-left: 2px solid var(--warn);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* CATALOG */
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .device-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  }
+
+  .device-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-6px);
+    box-shadow: 0 25px 50px rgba(0,229,255,0.12);
+  }
+
+  .device-card.featured {
+    border-color: var(--accent2);
+  }
+
+  .device-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    z-index: 10;
+  }
+
+  .badge-entry { background: rgba(0,255,157,0.15); color: var(--accent3); border: 1px solid rgba(0,255,157,0.3); }
+  .badge-advanced { background: rgba(0,229,255,0.15); color: var(--accent); border: 1px solid rgba(0,229,255,0.3); }
+  .badge-pro { background: rgba(255,118,67,0.15); color: var(--warn); border: 1px solid rgba(255,118,67,0.3); }
+
+  .device-img {
+    width: 100%;
+    height: 240px;
+    background: linear-gradient(135deg, #0b0e14 0%, #182232 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .phone-svg {
+    width: 90px;
+    height: 170px;
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.5;
+    opacity: 0.7;
+  }
+
+  .device-glow-ring {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,229,255,0.12) 0%, transparent 70%);
+  }
+
+  .device-body { padding: 2rem; }
+
+  .device-name {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+    color: var(--text);
+  }
+
+  .device-sub {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .spec-item {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 0.8rem;
+    border-radius: 4px;
+  }
+
+  .spec-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.3rem;
+  }
+
+  .spec-value {
+    font-family: var(--mono);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .spec-note {
+    font-size: 0.75rem;
+    color: var(--text2);
+    margin-top: 0.2rem;
+    line-height: 1.4;
+  }
+
+  .device-desc {
+    font-size: 0.9rem;
+    color: var(--text2);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .delivery-info {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .delivery-title {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.6rem;
+  }
+
+  .delivery-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text2);
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
+
+  .delivery-row .dot {
+    color: var(--accent3);
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+  }
+
+  .device-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+    background: rgba(255,255,255,0.02);
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    border: 1px dashed var(--border);
+  }
+
+  .price-from {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text3);
+    text-transform: uppercase;
+  }
+
+  .price-amount {
+    font-family: var(--mono);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .price-note {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--accent3);
+  }
+
+  /* PACKS */
+  .packs-section {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+  }
+
+  .packs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .pack-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: all 0.3s;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  }
+
+  .pack-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+
+  .pack-card.recommended {
+    border-color: var(--accent3);
+    background: linear-gradient(145deg, var(--surface) 0%, rgba(0,255,157,0.02) 100%);
+  }
+
+  .pack-rec-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    background: var(--accent3);
+    color: var(--bg);
+    padding: 0.3rem 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    border-radius: 4px;
+  }
+
+  .pack-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+
+  .pack-device {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  .pack-price {
+    font-family: var(--mono);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+    line-height: 1;
+  }
+
+  .pack-price-note {
+    font-size: 0.85rem;
+    color: var(--text2);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .pack-includes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pack-includes li {
+    font-size: 0.9rem;
+    color: var(--text2);
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    line-height: 1.4;
+  }
+
+  .pack-includes li::before {
+    content: '✓';
+    color: var(--accent3);
+    font-family: var(--mono);
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .addons-section {
+    margin-top: 4rem;
+  }
+
+  .addons-title {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+  }
+
+  .addon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .addon-item {
+    background: var(--surface);
+    padding: 1.4rem 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .addon-name {
+    font-size: 0.9rem;
+    color: var(--text2);
+    font-weight: 600;
+  }
+
+  .addon-price {
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent3);
+  }
+
+  /* PROCESS */
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 3rem;
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    left: 2.5rem;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+  }
+
+  .process-step {
+    display: flex;
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    width: 5rem;
+    height: 5rem;
+    flex-shrink: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
+    z-index: 1;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+
+  .step-content h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+
+  .step-content p {
+    font-size: 0.95rem;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+
+  .step-time {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent3);
+    margin-top: 0.6rem;
+  }
+
+  /* SHIPPING */
+  .shipping-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .ship-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2rem;
+  }
+
+  .ship-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .ship-price-tag {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+  }
+
+  .free { background: rgba(0,255,157,0.1); color: var(--accent3); }
+  .paid { background: rgba(255,118,67,0.1); color: var(--warn); }
+
+  .ship-details {
+    font-size: 0.9rem;
+    color: var(--text2);
+    line-height: 1.7;
+    margin-top: 0.8rem;
+  }
+
+  .privacy-note {
+    background: rgba(0,229,255,0.04);
+    border: 1px solid rgba(0,229,255,0.15);
+    border-radius: 6px;
+    padding: 1.8rem;
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .privacy-note-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+  .privacy-note p {
+    font-size: 0.95rem;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+
+  /* PAYMENT */
+  .payment-section { background: var(--bg2); border-top: 1px solid var(--border); }
+
+  .payment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  .payment-col h3 {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .payment-col.recommended h3 { color: var(--accent3); border-color: rgba(0,255,157,0.3); }
+  .payment-col.accepted h3 { color: var(--accent); }
+
+  .pay-method {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+  }
+
+  .pay-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .pay-name { color: var(--text); font-weight: 600; }
+  .pay-note { font-size: 0.8rem; color: var(--text3); margin-top: 0.2rem; }
+
+  /* Q&A */
+  .qa-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .qa-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2rem;
+  }
+
+  .qa-item h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--text);
+    padding-left: 1.2rem;
+    border-left: 3px solid var(--accent);
+  }
+
+  .qa-item p {
+    font-size: 0.9rem;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+
+  /* BLOG */
+  .blog-section { background: var(--bg2); border-top: 1px solid var(--border); }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .blog-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  .blog-card:hover {
+    border-color: var(--accent2);
+    transform: translateY(-4px);
+  }
+
+  .blog-thumb {
+    height: 160px;
+    background: linear-gradient(135deg, var(--bg3), var(--surface2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--surface) 0%, transparent 60%);
+  }
+
+  .blog-body { padding: 1.5rem; }
+
+  .blog-cat {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.6rem;
+  }
+
+  .blog-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  .blog-card p {
+    font-size: 0.85rem;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+
+  .blog-date {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text3);
+    margin-top: 1rem;
+  }
+
+  /* CONTACT / SIMPLEX */
+  .contact-section {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+  }
+
+  .contact-inner {
+    max-width: 750px;
+  }
+
+  .contact-inner p {
+    color: var(--text2);
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .simplex-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.2rem 1.8rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+
+  .simplex-badge.badge-hot {
+    border-color: var(--accent3);
+    background: linear-gradient(135deg, var(--surface) 0%, rgba(0,255,157,0.03) 100%);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    padding: 4rem 5% 2.5rem;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .footer-brand .nav-logo {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.9rem;
+    color: var(--text3);
+    line-height: 1.7;
+    max-width: 400px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .footer-col h4 {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 0.6rem; }
+
+  .footer-col a {
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: var(--accent); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-legal {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text3);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-stats { display: none; }
+    .payment-grid { grid-template-columns: 1fr; }
+    .qa-grid { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+    .footer-top { grid-template-columns: 1fr; }
+    .footer-links { display: none; }
+    .pack-card.vip> div { grid-template-columns: 1fr !important; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 80px 5%; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .packs-grid { grid-template-columns: 1fr; }
+    .catalog-grid { grid-template-columns: 1fr; }
+    .hero-buttons { flex-direction: column; }
+    .btn-primary, .btn-secondary { text-align: center; width: 100%; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .hero-content { animation: fadeIn 0.8s ease both; }
+
+  .blink {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--accent3);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  /* PAGE SECTIONS */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* BLOG ARTICLE */
+  .article-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 130px 5% 80px;
+  }
+
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text3);
+    margin-bottom: 1rem;
+  }
+
+  .article-wrapper h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 2rem;
+  }
+
+  .article-body p {
+    font-size: 1.05rem;
+    color: var(--text2);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .article-body h2 {
+    font-size: 1.5rem;
+    margin: 3rem 0 1.2rem;
+    color: var(--text);
+  }
+
+  .article-body h3 {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin: 2rem 0 0.8rem;
+    font-family: var(--mono);
+  }
+
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--text3);
+    text-decoration: none;
+    margin-bottom: 2.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: color 0.2s;
+  }
+
+  .back-btn:hover { color: var(--accent); }
+
+  /* ── VIP / BUSINESS ADDITIONS ─────────────────── */
+
+  .pack-card.vip {
+    border-color: var(--accent);
+    background: linear-gradient(145deg, var(--surface) 0%, rgba(0,229,255,0.03) 100%);
+    box-shadow: 0 0 0 1px rgba(0,229,255,0.2), 0 20px 50px rgba(0,229,255,0.08);
+  }
+  .pack-card.vip:hover { box-shadow: 0 0 0 1px rgba(0,229,255,0.4), 0 30px 60px rgba(0,229,255,0.14); }
+  .pack-rec-badge.vip-badge { background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%); color: var(--bg); }
+
+  .breakdown-table { width:100%; border-collapse:collapse; margin-top:1rem; font-family:var(--mono); font-size:0.78rem; }
+  .breakdown-table tr { border-bottom:1px solid var(--border); }
+  .breakdown-table tr:last-child { border-bottom:none; }
+  .breakdown-table td { padding:0.55rem 0.4rem; color:var(--text2); vertical-align:top; }
+  .breakdown-table td:last-child { text-align:right; color:var(--accent3); white-space:nowrap; padding-left:0.8rem; }
+  .breakdown-table td .item-note { font-size:0.68rem; color:var(--text3); display:block; margin-top:0.15rem; }
+  .breakdown-table .total-row td { color:var(--text); font-weight:700; padding-top:0.9rem; border-top:1px solid var(--border2); }
+  .breakdown-table .total-row td:last-child { color:var(--accent); font-size:1rem; }
+
+  .business-section { background:var(--bg3); border-top:1px solid var(--border); }
+  .biz-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-top:3rem; }
+  .biz-card { background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:2rem; transition:all 0.3s; }
+  .biz-card:hover { border-color:var(--accent2); transform:translateY(-3px); }
+  .biz-icon { font-size:2rem; margin-bottom:1.2rem; display:block; }
+  .biz-card h3 { font-size:1.15rem; font-weight:700; margin-bottom:0.7rem; }
+  .biz-card p { font-size:0.9rem; color:var(--text2); line-height:1.7; }
+  .biz-tag { display:inline-block; font-family:var(--mono); font-size:0.65rem; padding:0.25rem 0.7rem; border-radius:3px; margin-top:1rem; background:rgba(0,180,255,0.1); color:var(--accent2); border:1px solid rgba(0,180,255,0.25); text-transform:uppercase; letter-spacing:0.1em; }
+
+  .tier-strip { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:6px; overflow:hidden; margin-top:2rem; }
+  .tier-cell { background:var(--surface); padding:1.4rem 1.6rem; }
+  .tier-label { font-family:var(--mono); font-size:0.65rem; color:var(--text3); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem; }
+  .tier-name { font-size:1.1rem; font-weight:700; margin-bottom:0.3rem; }
+  .tier-state { font-family:var(--mono); font-size:0.72rem; }
+  .tier-state.recon { color:var(--accent3); }
+  .tier-state.semi { color:var(--accent2); }
+  .tier-state.new { color:var(--warn); }
+  .tier-base { font-family:var(--mono); font-size:0.8rem; color:var(--text3); margin-top:0.5rem; }
+  .tier-total { font-family:var(--mono); font-size:1.4rem; font-weight:700; color:var(--accent); margin-top:0.3rem; }
+
+  .surcharge-row { display:flex; align-items:center; gap:0.8rem; font-family:var(--mono); font-size:0.8rem; padding:0.6rem 1rem; background:rgba(0,229,255,0.04); border:1px solid rgba(0,229,255,0.1); border-radius:4px; color:var(--text2); margin-top:0.8rem; }
+  .surcharge-row .s-label { color:var(--text3); min-width:140px; }
+  .surcharge-row .s-val { color:var(--accent3); font-weight:700; }
+
+  /* ── SHOP PAGE ─────────────────────────────── */
+  #page-shop { display: none; }
+  #page-shop.active { display: block; }
+  #tab-shop.active { color: #fbbf24; }
+  #tab-informe.active { color: #34d399; }
+
+  .shop-hero {
+    padding: 120px 5% 60px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .shop-hero::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(251,191,36,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(251,191,36,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+    pointer-events: none;
+  }
+  .shop-tag {
+    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #fbbf24; margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .shop-tag::before { content: ''; width: 30px; height: 1px; background: #fbbf24; }
+  .accent-amber { color: #fbbf24; text-shadow: 0 0 20px rgba(251,191,36,0.15); }
+
+  /* PRODUCT CARD */
+  .shop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 3rem; align-items: start;
+    max-width: 1100px; margin: 0 auto;
+    padding: 80px 5%;
+  }
+  @media(max-width:860px){ .shop-grid { grid-template-columns: 1fr; } }
+
+  .shop-product-visual {
+    position: sticky; top: 90px;
+  }
+  .shop-cover-mock {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .shop-cover-mock::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    background: linear-gradient(180deg, #fbbf24, #f59e0b);
+  }
+  .mock-title { font-family: var(--mono); font-size: 1.8rem; font-weight: 700; color: var(--text); letter-spacing: 0.05em; }
+  .mock-line { width: 60px; height: 2px; background: #fbbf24; margin: 1rem auto; }
+  .mock-year { font-family: var(--mono); font-size: 0.85rem; color: var(--muted); }
+  .mock-badge {
+    display: inline-block; font-family: var(--mono); font-size: 0.6rem;
+    padding: 0.25rem 0.8rem; border: 1px solid rgba(251,191,36,0.3);
+    color: #fbbf24; border-radius: 3px; text-transform: uppercase;
+    letter-spacing: 0.12em; margin-top: 1.5rem;
+  }
+  .shop-format-pills { display: flex; gap: 0.6rem; margin-top: 1.5rem; flex-wrap: wrap; justify-content: center; }
+  .fmt-pill {
+    font-family: var(--mono); font-size: 0.65rem; padding: 0.3rem 0.8rem;
+    border-radius: 3px; text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .fmt-digital { background: rgba(34,211,238,0.1); border: 1px solid rgba(34,211,238,0.2); color: var(--accent); }
+  .fmt-hard    { background: rgba(251,191,36,0.1);  border: 1px solid rgba(251,191,36,0.2);  color: #fbbf24; }
+
+  /* PRICING */
+  .price-block {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1.5rem; margin-top: 1.5rem;
+  }
+  .price-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.6rem 0; border-bottom: 1px solid var(--border);
+  }
+  .price-row:last-child { border-bottom: none; }
+  .price-label { font-family: var(--mono); font-size: 0.8rem; color: var(--text2); }
+  .price-label small { display: block; font-size: 0.65rem; color: var(--text3); margin-top: 0.15rem; }
+  .price-val { font-family: var(--mono); font-size: 1.1rem; font-weight: 700; color: var(--accent); }
+  .price-val.amber { color: #fbbf24; }
+  .price-val.saving { font-size: 0.85rem; color: var(--accent3); }
+
+  /* INDEX TABLE */
+  .index-section { margin-top: 2rem; }
+  .index-manual {
+    border: 1px solid var(--border); border-radius: 6px;
+    overflow: hidden; margin-bottom: 1rem;
+  }
+  .index-manual-head {
+    background: var(--s2); padding: 0.8rem 1.2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; transition: background 0.2s;
+  }
+  .index-manual-head:hover { background: var(--bg3); }
+  .index-manual-title { font-family: var(--mono); font-size: 0.78rem; font-weight: 700; color: var(--text); }
+  .index-manual-pg { font-family: var(--mono); font-size: 0.65rem; color: var(--text3); }
+  .index-items { background: var(--bg); padding: 0.5rem 0; display: none; }
+  .index-items.open { display: block; }
+  .index-item {
+    display: flex; justify-content: space-between;
+    padding: 0.4rem 1.2rem 0.4rem 2rem;
+    font-family: var(--mono); font-size: 0.72rem; color: var(--text2);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+  .index-item:last-child { border-bottom: none; }
+  .index-item-pg { color: var(--text3); flex-shrink: 0; margin-left: 1rem; }
+
+  /* PAYMENT */
+  .pay-methods { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem; }
+  .pay-method {
+    display: flex; align-items: center; gap: 1rem;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; padding: 0.9rem 1.2rem;
+    font-family: var(--mono); font-size: 0.8rem; color: var(--text2);
+    text-decoration: none; transition: border-color 0.2s;
+  }
+  .pay-method:hover { border-color: #fbbf24; }
+  .pay-method.hot { border-color: rgba(251,191,36,0.4); background: rgba(251,191,36,0.03); }
+  .pay-icon { font-size: 1.2rem; flex-shrink: 0; }
+  .pay-name { font-weight: 700; color: var(--text); display: block; }
+  .pay-note { font-size: 0.65rem; color: var(--text3); margin-top: 0.1rem; display: block; }
+  .nav-tabs {
+    display: flex;
+    gap: 2px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 3px;
+  }
+  .nav-tab {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.07em;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: var(--text3);
+    transition: all 0.2s;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .nav-tab:hover { color: var(--text2); }
+  .nav-tab.active {
+    background: var(--surface2);
+    color: var(--accent);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  #tab-empresa.active { color: #a78bfa; }
+
+  /* ── EMPRESA PAGE ──────────────────────────────── */
+  #page-empresa { display: none; }
+  #page-empresa.active { display: block; }
+
+  .emp-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 5% 60px;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  .emp-hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(124,58,237,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124,58,237,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
+  }
+  .emp-glow {
+    position: absolute; top: 10%; right: -5%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(124,58,237,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .emp-glow2 {
+    position: absolute; bottom: -5%; left: -5%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(79,70,229,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .emp-tag {
+    font-family: var(--mono); font-size: 0.75rem;
+    color: #a78bfa; letter-spacing: 0.2em;
+    text-transform: uppercase; margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .emp-tag::before { content:''; width:30px; height:1px; background:#a78bfa; }
+  .accent-purple { color: #a78bfa; text-shadow: 0 0 20px rgba(167,139,250,0.2); }
+  .accent-indigo { color: #818cf8; }
+
+  .emp-stat-card {
+    background: var(--surface);
+    border: 1px solid rgba(124,58,237,0.2);
+    padding: 1.4rem 1.6rem;
+    border-radius: 6px;
+    text-align: center;
+    min-width: 160px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+  .emp-stat-num {
+    font-family: var(--mono); font-size: 2.2rem; font-weight: 700;
+    color: #a78bfa; display: block; line-height: 1; margin-bottom: 0.4rem;
+  }
+
+  /* SECTOR CARDS */
+  .sector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .sector-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px; padding: 2rem;
+    transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .sector-card::before {
+    content: ''; position: absolute; top:0; left:0; right:0; height:2px;
+    background: linear-gradient(90deg, #7c3aed, #4f46e5);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .sector-card:hover { border-color: rgba(124,58,237,0.4); transform: translateY(-3px); }
+  .sector-card:hover::before { opacity: 1; }
+  .sector-icon { font-size: 2rem; margin-bottom: 1.2rem; display: block; }
+  .sector-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.7rem; }
+  .sector-card p { font-size: 0.9rem; color: var(--text2); line-height: 1.7; }
+  .sector-tag {
+    display: inline-block; font-family: var(--mono); font-size: 0.65rem;
+    padding: 0.25rem 0.7rem; border-radius: 3px; margin-top: 1rem;
+    background: rgba(124,58,237,0.12); color: #a78bfa;
+    border: 1px solid rgba(124,58,237,0.25);
+    text-transform: uppercase; letter-spacing: 0.1em;
+  }
+
+  /* EMPRESA PACK TABLE */
+  .emp-pack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem; margin-top: 3rem;
+  }
+  .emp-pack-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; padding: 2.5rem 2rem;
+    position: relative; transition: all 0.3s;
+  }
+  .emp-pack-card:hover { border-color: rgba(124,58,237,0.4); transform: translateY(-4px); }
+  .emp-pack-card.featured {
+    border-color: #7c3aed;
+    background: linear-gradient(145deg, var(--surface) 0%, rgba(124,58,237,0.04) 100%);
+    box-shadow: 0 0 0 1px rgba(124,58,237,0.2), 0 20px 50px rgba(124,58,237,0.08);
+  }
+  .emp-rec-badge {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    font-family: var(--mono); font-size: 0.65rem;
+    background: linear-gradient(90deg, #7c3aed, #4f46e5);
+    color: #fff; padding: 0.3rem 1.2rem;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    font-weight: 700; border-radius: 4px; white-space: nowrap;
+  }
+  .emp-pack-name { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.4rem; }
+  .emp-pack-sub { font-family: var(--mono); font-size: 0.72rem; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.2rem; }
+  .emp-pack-price { font-family: var(--mono); font-size: 2.2rem; font-weight: 700; color: #a78bfa; margin-bottom: 0.3rem; line-height: 1; }
+  .emp-pack-note { font-size: 0.85rem; color: var(--text2); margin-bottom: 1.5rem; line-height: 1.5; }
+
+  /* PROCESO EMPRESA */
+  .emp-proceso {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem; margin-top: 3rem; position: relative;
+  }
+  .emp-step {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; padding: 2rem; text-align: center;
+    transition: border-color 0.3s;
+  }
+  .emp-step:hover { border-color: rgba(124,58,237,0.4); }
+  .emp-step-num {
+    font-family: var(--mono); font-size: 2rem; font-weight: 700;
+    color: #7c3aed; display: block; margin-bottom: 1rem;
+  }
+  .emp-step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .emp-step p { font-size: 0.88rem; color: var(--text2); line-height: 1.7; }
+
+  /* DESCUENTO VOLUMEN */
+  .volume-table {
+    width: 100%; border-collapse: collapse;
+    font-family: var(--mono); font-size: 0.82rem; margin-top: 1.5rem;
+  }
+  .volume-table th {
+    text-align: left; padding: 0.7rem 1rem;
+    background: var(--bg3); color: var(--text3);
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--border2);
+  }
+  .volume-table td {
+    padding: 0.8rem 1rem; border-bottom: 1px solid var(--border);
+    color: var(--text2);
+  }
+  .volume-table tr:last-child td { border-bottom: none; }
+  .volume-table td.highlight { color: #a78bfa; font-weight: 700; }
+  .volume-table td.saving { color: var(--accent3); font-weight: 700; }
+
+  /* CONTACT EMPRESA */
+  .emp-contact-inner { max-width: 750px; }
+  .emp-contact-inner p { color: var(--text2); line-height: 1.8; font-size: 1rem; }
+  .emp-badge {
+    display: inline-flex; align-items: center; gap: 1rem;
+    background: var(--surface); border: 1px solid var(--border);
+    padding: 1.2rem 1.8rem; border-radius: 6px; margin-top: 1rem;
+    font-family: var(--mono); font-size: 0.9rem;
+    color: var(--text); text-decoration: none; width: 100%;
+    transition: border-color 0.2s;
+  }
+  .emp-badge:hover { border-color: #7c3aed; }
+  .emp-badge.hot { border-color: #a78bfa; background: linear-gradient(135deg, var(--surface) 0%, rgba(124,58,237,0.04) 100%); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo" onclick="showPage('main');return false;">hard<span>to</span>crack</a>
+
+  <div class="nav-tabs">
+    <button id="tab-vip" class="nav-tab active" onclick="switchAudience('vip')">Particulares VIP</button>
+    <button id="tab-empresa" class="nav-tab" onclick="switchAudience('empresa')">Empresas</button>
+    <button id="tab-shop" class="nav-tab" onclick="showPage('shop')">📖 Dossier</button>
+    <button id="tab-informe" class="nav-tab" onclick="showPage('informe')">📋 Informe 2026</button>
+  </div>
+
+  <ul id="nav-links-vip">
+    <li><a href="#why">Por qué</a></li>
+    <li><a href="#catalog">Terminales</a></li>
+    <li><a href="#packs">Pack VIP</a></li>
+    <li><a href="#shipping">Envío</a></li>
+    <li><a href="#" onclick="showPage('blog');return false;">Blog</a></li>
+    <li><a href="hardtocrack-tienda.html">Tienda</a></li>
+  </ul>
+  <ul id="nav-links-empresa" style="display:none">
+    <li><a href="#emp-why">Por qué</a></li>
+    <li><a href="#emp-sectores">Sectores</a></li>
+    <li><a href="#emp-packs">Precios</a></li>
+    <li><a href="#emp-proceso">Proceso</a></li>
+    <li><a href="#emp-contact">Contacto</a></li>
+    <li><a href="hardtocrack-tienda.html">Tienda</a></li>
+  </ul>
+
+  <a id="nav-cta-vip" href="#contact" class="nav-cta">Consulta Privada →</a>
+  <a id="nav-cta-empresa" href="#emp-contact" class="nav-cta" style="display:none;background:linear-gradient(135deg,#7c3aed,#4f46e5)">Presupuesto Empresa →</a>
+</nav>
+
+<div id="page-main" class="page active">
+
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="hero-content">
+      <div class="hero-tag"><span class="blink"></span> Privacidad Total · Perfil VIP &amp; Empresa</div>
+      <h1>Todo incluido.<br><span class="accent">Llave en mano.</span><br><span class="accent-green">Sin tecnicismos.</span></h1>
+      <p class="hero-sub">Un único pack que incluye el terminal, la instalación, los servicios anuales, los accesorios físicos y el soporte humano. Lo activamos todo nosotros. Tú lo recibes funcionando y lo usas desde el minuto uno.</p>
+      <div class="hero-buttons">
+        <a href="#packs" class="btn-primary btn-phone">Ver el Pack Completo →</a>
+        <a href="#contact" class="btn-secondary">📞 Consulta Privada por Llamada</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <span class="stat-num">15+</span>
+        <span class="stat-label">Servicios incluidos<br>en un solo pack</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">12m</span>
+        <span class="stat-label">Soporte técnico<br>incluido</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">0%</span>
+        <span class="stat-label">Telemetría<br>Big Tech</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section" id="why">
+    <div class="section-tag">// Tu privacidad bajo control corporativo</div>
+    <h2>El smartphone comercial:<br>Una fuga continua de datos.</h2>
+    <div class="why-intro">
+      <p>Un sistema operativo convencional envía datos de localización, conexiones, metadatos de mensajería y hábitos de uso de forma persistente a servidores centrales. Cambiar las opciones de privacidad de la interfaz no detiene los servicios raíz integrados en el hardware.</p>
+      <p><strong>GrapheneOS</strong> sustituye por completo esta estructura: implementa sandboxing estricto (aislando cada aplicación de forma independiente), cifra el almacenamiento del hardware mediante protocolos avanzados y elimina cualquier rastro de rastreo comercial externo. Es la herramienta de seguridad recomendada para perfiles de alto nivel, inversores, profesionales legales y corporativos.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">🕵️</span>
+        <h3>Rastreo permanente en segundo plano</h3>
+        <p>Incluso con el GPS apagado, tu terminal recopila datos de redes circundantes e identificadores únicos irrevocables integrados a nivel de sistema operativo.</p>
+        <div class="threat-list">
+          <div class="threat-item">⚠ Identificación persistente de hardware</div>
+          <div class="threat-item">⚠ Sincronización forzada en la nube comercial</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🔒</span>
+        <h3>El blindaje de GrapheneOS</h3>
+        <p>GrapheneOS endurece el Kernel del sistema, añade cifrado criptográfico masivo en reposo y permite perfiles de usuario totalmente estancos. Al usar el chip Titan M2 del Google Pixel, ofrece un hardware de seguridad inexpugnable.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">👥</span>
+        <h3>Optimizado para uso profesional</h3>
+        <p>Diseñado específicamente para salvaguardar capital digital y comunicaciones sensibles:</p>
+        <div class="threat-list" style="margin-top:0.8rem">
+          <div class="threat-item" style="color:var(--accent); background:rgba(0,229,255,0.06); border-color:var(--accent)">→ Inversores de Criptoactivos &amp; Holders</div>
+          <div class="threat-item" style="color:var(--accent); background:rgba(0,229,255,0.06); border-color:var(--accent)">→ Abogados y Secreto Profesional</div>
+          <div class="threat-item" style="color:var(--accent); background:rgba(0,229,255,0.06); border-color:var(--accent)">→ Consultores y Directivos de Empresa</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalog">
+    <div class="section-tag">// Terminales Recomendados</div>
+    <h2>Hardware verificado de alta seguridad.</h2>
+
+    <div class="catalog-grid">
+
+      <div class="device-card">
+        <span class="device-badge badge-entry">Reacondicionado Certificado</span>
+        <div class="device-img">
+          <div class="device-glow-ring"></div>
+          <svg class="phone-svg" viewBox="0 0 100 180" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="5" width="80" height="170" rx="12" stroke="currentColor"/>
+            <rect x="20" y="18" width="60" height="110" rx="4" stroke="currentColor" opacity="0.5"/>
+            <circle cx="50" cy="155" r="6" stroke="currentColor"/>
+          </svg>
+        </div>
+        <div class="device-body">
+          <div class="device-name">Pixel 8a</div>
+          <div class="device-sub">GrapheneOS Preinstalado</div>
+          <div class="specs-grid">
+            <div class="spec-item">
+              <div class="spec-label">RAM / Memoria</div>
+              <div class="spec-value">8 GB</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Almacenamiento</div>
+              <div class="spec-value">128 GB</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Seguridad Hardware</div>
+              <div class="spec-value">Chip Titan M2</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Estado Batería</div>
+              <div class="spec-value">≥80% Garantizado</div>
+            </div>
+          </div>
+          <p class="device-desc">Excelente equilibrio para un uso fluido e individual de perfiles de privacidad. Hardware revisado a fondo con altos estándares técnicos.</p>
+          <div class="delivery-info">
+            <div class="delivery-title">⏱ Gestión y Plazos</div>
+            <div class="delivery-row"><span class="dot">•</span>~10 días de control técnico y adquisición del terminal.</div>
+            <div class="delivery-row"><span class="dot">•</span>2-3 días de instalación de sistema y cifrado.</div>
+          </div>
+          <div class="device-price">
+            <span class="price-from">Instalación base</span>
+            <span class="price-amount">150€</span>
+          </div>
+          <a href="#contact" class="btn-primary" style="width:100%;text-align:center;display:block">Te informamos por teléfono →</a>
+        </div>
+      </div>
+
+      <div class="device-card featured">
+        <span class="device-badge badge-advanced">Terminal Nuevo</span>
+        <div class="device-img">
+          <div class="device-glow-ring" style="background:radial-gradient(circle, rgba(0,229,255,0.15) 0%, transparent 70%)"></div>
+          <svg class="phone-svg" viewBox="0 0 100 180" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="3" width="84" height="174" rx="14" stroke="currentColor"/>
+            <rect x="18" y="16" width="64" height="118" rx="5" stroke="currentColor" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="device-body">
+          <div class="device-name">Pixel 9 / 9 Pro</div>
+          <div class="device-sub">Máxima potencia multiperfil</div>
+          <div class="specs-grid">
+            <div class="spec-item">
+              <div class="spec-label">RAM / Memoria</div>
+              <div class="spec-value">12GB - 16GB</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Almacenamiento</div>
+              <div class="spec-value">256 GB</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Rendimiento</div>
+              <div class="spec-value">Tensor G4</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Aislamiento</div>
+              <div class="spec-value">Hasta 3 usuarios</div>
+            </div>
+          </div>
+          <p class="device-desc">La opción avanzada idónea para gestionar perfiles paralelos (Personal, Profesional, Cripto/Finanzas) operando en segundo plano con total soltura.</p>
+          <div class="delivery-info">
+            <div class="delivery-title">⏱ Gestión y Plazos</div>
+            <div class="delivery-row"><span class="dot">•</span>1-2 días para recepción de dispositivo a estrenar.</div>
+            <div class="delivery-row"><span class="dot">•</span>2-3 días para instalación avanzada y setup.</div>
+          </div>
+          <div class="device-price">
+            <span class="price-from">Instalación base</span>
+            <span class="price-amount">170€</span>
+          </div>
+          <a href="#contact" class="btn-primary" style="width:100%;text-align:center;display:block">Configurar por teléfono →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="packs-section" id="packs">
+    <div class="section-tag">// Pack Privacidad Total — Todo Incluido</div>
+    <h2>Un pack. Todo dentro.<br>Nada que configurar tú.</h2>
+    <p style="color:var(--text2);max-width:680px;line-height:1.7;margin-top:1rem">El Pack Privacidad Total incluye el terminal, la instalación completa de GrapheneOS, todos los servicios digitales anuales, los accesorios físicos y el soporte humano. Lo activamos todo antes del envío. Tú lo abres y funciona.</p>
+
+    <div class="section-tag" style="margin-top:3rem">// Precio según el terminal</div>
+    <div class="tier-strip">
+      <div class="tier-cell">
+        <div class="tier-label">Opción A</div>
+        <div class="tier-name">Pixel 8a / 9a</div>
+        <div class="tier-state recon">Reacondicionado certificado</div>
+        <div class="tier-base">Pack + dispositivo</div>
+        <div class="tier-total">~580–630 €</div>
+      </div>
+      <div class="tier-cell" style="border-left:1px solid var(--border2)">
+        <div class="tier-label">Opción B</div>
+        <div class="tier-name">Pixel 9a</div>
+        <div class="tier-state new">Nuevo a estrenar</div>
+        <div class="tier-base">Pack + dispositivo</div>
+        <div class="tier-total">~750–800 €</div>
+      </div>
+      <div class="tier-cell" style="border-left:1px solid var(--border2)">
+        <div class="tier-label">Opción C</div>
+        <div class="tier-name">Pixel 9 Pro</div>
+        <div class="tier-state new">Nuevo a estrenar</div>
+        <div class="tier-base">Pack + dispositivo</div>
+        <div class="tier-total">~950–1.080 €</div>
+      </div>
+    </div>
+
+    <div class="packs-grid" style="margin-top:3rem">
+
+      <div class="pack-card vip" style="grid-column: 1 / -1">
+        <div class="pack-rec-badge vip-badge">PACK PRIVACIDAD TOTAL — TODO INCLUIDO</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;flex-wrap:wrap;margin-top:0.5rem">
+
+          <div>
+            <div style="font-family:var(--mono);font-size:0.65rem;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem">// Ecosistema completo llave en mano</div>
+            <div class="pack-name" style="font-size:1.8rem">Pack Privacidad Total</div>
+            <div class="pack-device">Para particulares VIP y pequeñas empresas</div>
+
+            <div style="margin-top:1.5rem">
+              <div class="surcharge-row"><span class="s-label">Opción A — Pixel 8a / 9a reacondicionado</span><span class="s-val">~580–630 €</span></div>
+              <div class="surcharge-row"><span class="s-label">Opción B — Pixel 9a nuevo</span><span class="s-val">~750–800 €</span></div>
+              <div class="surcharge-row"><span class="s-label">Opción C — Pixel 9 Pro nuevo</span><span class="s-val">~950–1.080 €</span></div>
+            </div>
+
+            <div style="margin-top:1.8rem;padding:1.2rem;background:rgba(0,229,255,0.04);border:1px solid rgba(0,229,255,0.12);border-radius:4px">
+              <div style="font-family:var(--mono);font-size:0.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.6rem">// Incluido en todos los tiers</div>
+              <ul class="pack-includes">
+                <li>GrapheneOS instalado, configurado y verificado</li>
+                <li>12 meses VPN Mullvad (WireGuard, kill switch, sin logs)</li>
+                <li>12 meses SimpleLogin Premium (aliases ilimitados)</li>
+                <li>Dominio privado personalizado vía Njal.la</li>
+                <li>Alta eSIM privada + datos 10 GB 30 días</li>
+                <li>Número Signal privado activado (sin número personal)</li>
+                <li>Pantalla protectora antiespía (privacidad 60°)</li>
+                <li>Bolsa bloqueadora de señal tipo Faraday</li>
+                <li>Cargador rápido 30W compatible Pixel</li>
+                <li>Cable USB-C Google original</li>
+                <li>Funda/carcasa protectora para el modelo</li>
+                <li>Manual operativo impreso hardtocrack (A5, 52 pág.) — <strong style="color:var(--accent3)">incluido</strong></li>
+                <li>1 mes soporte técnico humano por SimpleX — <strong style="color:var(--accent3)">incluido</strong></li>
+                <li>12 meses garantía propia hardtocrack — <strong style="color:var(--accent3)">incluido</strong></li>
+              </ul>
+            </div>
+
+            <a href="#contact" class="btn-primary" style="width:100%;text-align:center;display:block;margin-top:2rem">Cerrar Pack por Teléfono / SimpleX →</a>
+          </div>
+
+          <div>
+            <div style="font-family:var(--mono);font-size:0.65rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.6rem">// Desglose del pack (servicios + accesorios)</div>
+            <table class="breakdown-table">
+              <tr>
+                <td>Instalación GrapheneOS + gestión<span class="item-note">Configuración, perfiles, hardening, apps</span></td>
+                <td>120 €</td>
+              </tr>
+              <tr>
+                <td>12 meses VPN Mullvad<span class="item-note">WireGuard · kill switch · sin logs</span></td>
+                <td>90 €</td>
+              </tr>
+              <tr>
+                <td>12 meses SimpleLogin Premium<span class="item-note">Aliases ilimitados · 1 dominio</span></td>
+                <td>55 €</td>
+              </tr>
+              <tr>
+                <td>Dominio privado Njal.la<span class="item-note">WHOIS anónimo · DNS controlado</span></td>
+                <td>30 €</td>
+              </tr>
+              <tr>
+                <td>Alta eSIM privada<span class="item-note">Sin datos personales expuestos</span></td>
+                <td>20 €</td>
+              </tr>
+              <tr>
+                <td>Datos eSIM 10 GB / 30 días<span class="item-note">Listo para usar desde el primer encendido</span></td>
+                <td>20 €</td>
+              </tr>
+              <tr>
+                <td>Número Signal privado<span class="item-note">Sin vinculación a número personal</span></td>
+                <td>25 €</td>
+              </tr>
+              <tr>
+                <td>Pantalla antiespía<span class="item-note">Privacidad visual 60° · templada</span></td>
+                <td>10 €</td>
+              </tr>
+              <tr>
+                <td>Bolsa bloqueadora señal Faraday<span class="item-note">Bloqueo total GPS/GSM/Wi-Fi/BT</span></td>
+                <td>15 €</td>
+              </tr>
+              <tr>
+                <td>Cargador 30W<span class="item-note">Compatible Pixel · carga rápida</span></td>
+                <td>20 €</td>
+              </tr>
+              <tr>
+                <td>Cable USB-C Google original<span class="item-note">Carga + datos segura</span></td>
+                <td>10 €</td>
+              </tr>
+              <tr>
+                <td>Funda / carcasa<span class="item-note">Para el modelo exacto del pack</span></td>
+                <td>10 €</td>
+              </tr>
+              <tr>
+                <td>Manual operativo impreso A5<span class="item-note">52 pág. · hardtocrack Ed. 2026</span></td>
+                <td style="color:var(--accent3)">incluido</td>
+              </tr>
+              <tr>
+                <td>1 mes soporte técnico SimpleX<span class="item-note">Humano · canal cifrado directo</span></td>
+                <td style="color:var(--accent3)">incluido</td>
+              </tr>
+              <tr>
+                <td>12 meses garantía propia hardtocrack<span class="item-note">Fianza y cobertura directa</span></td>
+                <td style="color:var(--accent3)">incluido</td>
+              </tr>
+              <tr class="total-row">
+                <td>Total pack (servicios + accesorios)<span class="item-note" style="color:var(--text3)">+ precio del terminal según tier elegido</span></td>
+                <td>415 €</td>
+              </tr>
+            </table>
+
+            <div style="margin-top:1.2rem;padding:1rem;background:rgba(0,255,157,0.04);border:1px solid rgba(0,255,157,0.15);border-radius:4px;font-size:0.85rem;color:var(--text2);line-height:1.6">
+              <span style="color:var(--accent3);font-weight:700">✓ Recargo dispositivo reacondicionado/seminuevo: +20 €</span><br>
+              Cubre la gestión, inspección técnica y auditoría de hardware del terminal de segunda mano.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pack-card">
+        <div style="font-family:var(--mono);font-size:0.65rem;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.4rem">// Línea Esencial</div>
+        <div class="pack-name">Instalación Limpia</div>
+        <div class="pack-device">Traes tu propio Pixel compatible</div>
+        <div class="pack-price">120€</div>
+        <div class="pack-price-note">Solo la instalación y configuración. Sin accesorios ni servicios anuales.</div>
+        <ul class="pack-includes">
+          <li>GrapheneOS última versión estable</li>
+          <li>Bootloader rebloquedao · Verified Boot activo</li>
+          <li>Limpieza total de telemetría comercial</li>
+          <li>Hardening de seguridad básico</li>
+          <li>Manual de usuario impreso incluido</li>
+        </ul>
+        <a href="#contact" class="btn-secondary" style="width:100%;text-align:center;display:block;margin-top:1.5rem">Solicitar por Teléfono →</a>
+      </div>
+
+      <div class="pack-card" style="border-color:var(--accent2)">
+        <div style="font-family:var(--mono);font-size:0.65rem;color:var(--accent2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.4rem">// Línea Empresa</div>
+        <div class="pack-name">Pack Multi-Terminal</div>
+        <div class="pack-device">2–10 dispositivos · Pequeña empresa</div>
+        <div class="pack-price" style="color:var(--accent2)">A medida</div>
+        <div class="pack-price-note">Descuento por volumen desde el 2.º terminal. Soporte técnico ampliado. Renovación de licencias gestionada.</div>
+        <ul class="pack-includes">
+          <li>Pack Privacidad Total × N terminales</li>
+          <li>Descuento por volumen (consultar en llamada)</li>
+          <li>3 meses soporte técnico por terminal</li>
+          <li>Gestión centralizada de renovaciones anuales</li>
+          <li>Onboarding por audio para cada usuario</li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="width:100%;text-align:center;display:block;margin-top:1.5rem;background:var(--accent2)">Presupuesto Empresa →</a>
+      </div>
+
+    </div>
+
+    <div class="addons-section">
+      <div class="addons-title">// Add-ons opcionales (combinables con cualquier pack)</div>
+      <div class="addon-grid">
+        <div class="addon-item">
+          <div>
+            <div class="addon-name">Router VPN Mudi V2 configurado</div>
+            <div class="pay-note">WireGuard · Kill Switch · batería 7000mAh · OLED</div>
+          </div>
+          <div class="addon-price">430 €</div>
+        </div>
+        <div class="addon-item">
+          <div>
+            <div class="addon-name">Pendrive Samsung — Tails (amnésico)</div>
+            <div class="pay-note">Arranca cualquier PC sin dejar rastro · Samsung calidad</div>
+          </div>
+          <div class="addon-price">145 €</div>
+        </div>
+        <div class="addon-item">
+          <div>
+            <div class="addon-name">Pendrive Samsung — VeraCrypt (doble fondo)</div>
+            <div class="pay-note">Denegación plausible · AES-Twofish-Serpent · Samsung calidad</div>
+          </div>
+          <div class="addon-price">155 €</div>
+        </div>
+        <div class="addon-item">
+          <div>
+            <div class="addon-name">Soporte técnico adicional (por mes)</div>
+            <div class="pay-note">Canal SimpleX directo · humano · sin bots</div>
+          </div>
+          <div class="addon-price">10 €/mes</div>
+        </div>
+        <div class="addon-item">
+          <div>
+            <div class="addon-name">WhatsApp + Telegram + Signal anónimos</div>
+            <div class="pay-note">3 números no vinculados a tu identidad</div>
+          </div>
+          <div class="addon-price">55 €</div>
+        </div>
+        <div class="addon-item">
+          <div>
+            <div class="addon-name">Perfiles adicionales aislados (×3)</div>
+            <div class="pay-note">Personal · Trabajo · Crypto — compartimentado</div>
+          </div>
+          <div class="addon-price">Consultar</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="business-section" id="business">
+    <div class="section-tag">// Para Pequeñas Empresas y Autónomos VIP</div>
+    <h2>Tu equipo protegido.<br>Sin departamento IT interno.</h2>
+    <p style="color:var(--text2);max-width:700px;line-height:1.7;margin-top:1rem">Gestionamos la privacidad digital de tu empresa como si fuera la nuestra. Desde 2 terminales. Sin contratos largos. Sin burocracia. Un interlocutor humano que conoce tu caso.</p>
+    <div class="biz-grid">
+      <div class="biz-card">
+        <span class="biz-icon">⚖️</span>
+        <h3>Despachos de Abogados y Notarías</h3>
+        <p>Secreto profesional protegido a nivel criptográfico. Comunicaciones cliente-abogado que no pueden ser interceptadas ni extraídas de un dispositivo comprometido.</p>
+        <span class="biz-tag">Secreto profesional</span>
+      </div>
+      <div class="biz-card">
+        <span class="biz-icon">📈</span>
+        <h3>Family Offices e Inversores</h3>
+        <p>Gestión de carteras, wallets de cripto y comunicaciones financieras blindadas. Nada que tus competidores puedan interceptar antes de que ejecutes una operación.</p>
+        <span class="biz-tag">Capital digital seguro</span>
+      </div>
+      <div class="biz-card">
+        <span class="biz-icon">🏥</span>
+        <h3>Clínicas y Profesionales Médicos</h3>
+        <p>Datos de pacientes aislados criptográficamente. Comunicaciones internas sin trazabilidad externa. Cumplimiento real del deber de confidencialidad en el canal móvil.</p>
+        <span class="biz-tag">Protección de datos RGPD</span>
+      </div>
+      <div class="biz-card">
+        <span class="biz-icon">🏢</span>
+        <h3>Consultoras y Dirección Ejecutiva</h3>
+        <p>Comunicaciones entre socios y con clientes de alto valor sin exposición a espionaje corporativo. Perfiles aislados por cliente o proyecto sin mezcla de datos.</p>
+        <span class="biz-tag">Compartimentación ejecutiva</span>
+      </div>
+      <div class="biz-card">
+        <span class="biz-icon">🔐</span>
+        <h3>Periodistas e Investigadores</h3>
+        <p>Fuentes protegidas matemáticamente. Comunicación con fuentes anónimas sin metadata vinculante. Entorno de trabajo que resiste análisis forense.</p>
+        <span class="biz-tag">Protección de fuentes</span>
+      </div>
+      <div class="biz-card">
+        <span class="biz-icon">💎</span>
+        <h3>Particulares de Alto Patrimonio</h3>
+        <p>Privacidad como activo personal. Un teléfono que no filtra tus movimientos, relaciones ni operaciones financieras a ninguna plataforma comercial.</p>
+        <span class="biz-tag">Discreción total</span>
+      </div>
+    </div>
+
+    <div style="margin-top:3rem;padding:2rem;background:var(--surface);border:1px solid var(--border2);border-radius:6px;max-width:750px">
+      <div class="section-tag" style="margin-bottom:1rem">// Proceso para empresas</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem">
+        <div>
+          <div style="font-family:var(--mono);font-size:1.2rem;font-weight:700;color:var(--accent);margin-bottom:0.4rem">01</div>
+          <div style="font-size:0.9rem;font-weight:700;margin-bottom:0.3rem">Llamada de diagnóstico</div>
+          <div style="font-size:0.82rem;color:var(--text2);line-height:1.6">15–30 min para entender el perfil de riesgo del equipo y el número de terminales.</div>
+        </div>
+        <div>
+          <div style="font-family:var(--mono);font-size:1.2rem;font-weight:700;color:var(--accent);margin-bottom:0.4rem">02</div>
+          <div style="font-size:0.9rem;font-weight:700;margin-bottom:0.3rem">Presupuesto detallado</div>
+          <div style="font-size:0.82rem;color:var(--text2);line-height:1.6">Enviado por canal seguro con desglose por dispositivo y descuentos por volumen aplicados.</div>
+        </div>
+        <div>
+          <div style="font-family:var(--mono);font-size:1.2rem;font-weight:700;color:var(--accent);margin-bottom:0.4rem">03</div>
+          <div style="font-size:0.9rem;font-weight:700;margin-bottom:0.3rem">Instalación y entrega</div>
+          <div style="font-size:0.82rem;color:var(--text2);line-height:1.6">Todos los terminales configurados, empaquetados y enviados con sus manuales. Soporte de activación incluido.</div>
+        </div>
+      </div>
+      <a href="#contact" class="btn-primary" style="display:inline-block;margin-top:2rem">Solicitar Presupuesto Empresa →</a>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="section-tag">// Rigor Técnico de Principio a Fin</div>
+    <h2>Protocolo de preparación del terminal.</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Adquisición Segura e Inspección de Hardware</h3>
+          <p>Adquirimos el dispositivo directamente bajo demanda. Para los modelos Pixel reacondicionados, se ejecuta una auditoría de hardware estricta en pantalla, módulos RF, SoC y rendimiento de batería (asegurando siempre una capacidad útil igual o superior al 80%).</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Flaseado Criptográfico e Inyección de Sistema</h3>
+          <p>Efectuamos el despliegue limpio de GrapheneOS. Cerramos el bootloader de manera inmediata post-instalación para garantizar la firma criptográfica del Verified Boot nativo. Nadie podrá manipular el teléfono a nivel físico sin que el sistema bloquee el acceso.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Estructura de Comunicaciones y Suite de Apps</h3>
+          <p>Si optas por configuraciones avanzadas, inyectamos las licencias de mensajería endurecida y las redes de enrutamiento (VPN/Alias) configuradas de forma óptima para que no requieran vinculación con tus identidades tradicionales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--bg2);border-top:1px solid var(--border)" id="shipping">
+    <div class="section-tag">// Logística y Discreción Total</div>
+    <h2>Cadena de entrega protegida.</h2>
+    <div class="shipping-grid">
+      <div class="ship-card">
+        <h3>Puntos de recogida / Locker <span class="ship-price-tag free">GRATIS</span></h3>
+        <div class="ship-details">Envíos gestionados hacia Taquillas Inteligentes o puntos concertados (InPost / Seur). Retiras el paquete con un código PIN privado sin interactuar con mensajeros ni desvelar tu domicilio.</div>
+      </div>
+      <div class="ship-card">
+        <h3>Entrega Personalizada en Mano</h3>
+        <div class="ship-details">Bajo condiciones específicas y zonas acordadas con anterioridad (consultar viabilidad logística). Requiere validación previa de seguridad por canales de audio.</div>
+      </div>
+    </div>
+    <div class="privacy-note">
+      <div class="privacy-note-icon">🛡️</div>
+      <p><strong>Remitente Neutro:</strong> El embalaje externo carece por completo de marcas corporativas, logotipos o cualquier indicio relativo a ciberseguridad o dispositivos móviles. Tu privacidad se defiende desde el minuto uno del trayecto.</p>
+    </div>
+  </section>
+
+  <section class="payment-section" id="payment">
+    <div class="section-tag">// Flexibilidad Operativa</div>
+    <h2>Pasarelas de Pago Flexibles.</h2>
+    <div class="payment-grid">
+      <div class="payment-col recommended">
+        <h3>✅ Canales de Privacidad Máxima</h3>
+        <div class="pay-method">
+          <div class="pay-icon">⬡</div>
+          <div>
+            <div class="pay-name">Monero (XMR)</div>
+            <div class="pay-note">Transacciones sin trazabilidad de cadena. Recomendado.</div>
+          </div>
+        </div>
+        <div class="pay-method">
+          <div class="pay-icon">💶</div>
+          <div>
+            <div class="pay-name">Efectivo</div>
+            <div class="pay-note">Aplicable para entregas coordinadas en persona.</div>
+          </div>
+        </div>
+      </div>
+      <div class="payment-col accepted">
+        <h3>✓ Otros Medios de Pago</h3>
+        <div class="pay-method">
+          <div class="pay-icon">₿</div>
+          <div>
+            <div class="pay-name">Criptoactivos Estándar</div>
+            <div class="pay-note">Bitcoin (BTC), Ethereum (ETH), USDT, USDC.</div>
+          </div>
+        </div>
+        <div class="pay-method">
+          <div class="pay-icon">💳</div>
+          <div>
+            <div class="pay-name">Transferencias y Enlaces de Tarjeta</div>
+            <div class="pay-note">Disponibles por comodidad operativa si la privacidad bancaria no es tu prioridad.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="qa">
+    <div class="section-tag">// Dudas Frecuentes</div>
+    <h2>Respuestas técnicas claras.</h2>
+    <div class="qa-grid">
+      <div class="qa-item">
+        <h3>¿Qué incluye exactamente el Pack Privacidad Total?</h3>
+        <p>El terminal con GrapheneOS instalado y configurado, 12 meses de VPN Mullvad, 12 meses de SimpleLogin Premium, un dominio privado Njal.la, alta de eSIM (20 €) con 10 GB de datos para los primeros 30 días, un número Signal privado (25 €), pantalla antiespía, bolsa Faraday, cargador 30W, cable USB-C Google, funda, el manual impreso hardtocrack (A5, 52 páginas), 1 mes de soporte técnico humano por SimpleX y 12 meses de garantía propia — todo incluido sin coste adicional.</p>
+      </div>
+      <div class="qa-item">
+        <h3>¿Puedo seguir usando mis aplicaciones habituales?</h3>
+        <p>Sí. GrapheneOS permite ejecutar los servicios de Google en un entorno aislado (Sandboxed). Tus apps del día a día funcionan perfectamente, pero sin privilegios para acceder al almacenamiento subyacente ni al comportamiento del teléfono fuera de su sandbox.</p>
+      </div>
+      <div class="qa-item">
+        <h3>¿Qué diferencia hay entre reacondicionado, seminuevo y nuevo?</h3>
+        <p>El reacondicionado ha pasado por revisión técnica completa y tiene batería certificada ≥ 80%. El seminuevo tiene ≥ 85% de batería y uso mínimo. El nuevo es el terminal directamente del fabricante sin uso previo. El pack de servicios y accesorios es idéntico en los tres casos; solo varía el precio del terminal y el recargo de gestión (+20 €) en los casos de segunda mano.</p>
+      </div>
+      <div class="qa-item">
+        <h3>¿Cómo funciona el soporte técnico incluido?</h3>
+        <p>Durante el primer mes tienes acceso a soporte técnico humano directo por SimpleX Chat — canal cifrado sin número de teléfono vinculado. Respondemos dudas sobre el uso del sistema, aplicaciones y configuración. Se puede ampliar por 10 €/mes adicional después del primer mes.</p>
+      </div>
+      <div class="qa-item">
+        <h3>¿Cómo se gestionan las actualizaciones del sistema?</h3>
+        <p>El terminal se actualiza directamente desde los servidores oficiales de GrapheneOS de forma automática y transparente, recibiendo parches de seguridad mensuales con soporte de hasta 7 años en los modelos más recientes.</p>
+      </div>
+      <div class="qa-item">
+        <h3>¿Podéis equipar a todo un equipo de empresa?</h3>
+        <p>Sí. Trabajamos con empresas de 2 a 10 terminales con descuento por volumen y soporte ampliado. Gestionamos la adquisición, instalación, empaquetado y envío de todos los terminales de forma coordinada, con onboarding por audio para cada usuario si lo necesitas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="section-tag">// Canal Directo de Activación</div>
+    <h2>Hablemos. Diseñamos tu paquete a medida por voz.</h2>
+    <div class="contact-inner">
+      <p>La mejor forma de resolver tus dudas y estructurar el presupuesto exacto de tu terminal es mediante una **conversación directa**. Elige el canal que prefieras para coordinar una llamada telefónica convencional o de audio seguro:</p>
+
+      <div style="display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem">
+
+        <a href="https://t.me/HardToCrackOS" target="_blank" class="simplex-badge badge-hot" style="text-decoration:none;transition:border-color 0.2s">
+          <span>✈️</span>
+          <div>
+            <div style="color:var(--accent3);font-weight:700">Telegram Call / Chat · @HardToCrackOS</div>
+            <div style="font-size:0.75rem;color:var(--text2);margin-top:0.2rem">El canal más rápido para coordinar una llamada telefónica o audio directo.</div>
+          </div>
+          <span style="margin-left:auto;font-size:0.8rem;color:var(--accent3)">→</span>
+        </a>
+
+        <a href="https://smp5.simplexonflux.com/a#Qi96g6HsSbpV7x7uRfYqbPFIkzGbksDGFrM-diL-LQA" target="_blank" class="simplex-badge" style="text-decoration:none;transition:border-color 0.2s">
+          <span>💬</span>
+          <div>
+            <div style="color:var(--accent);font-weight:700">SimpleX Chat · Audio Cifrado de Extremo a Extremo</div>
+            <div style="font-size:0.75rem;color:var(--text3);margin-top:0.2rem">Privacidad matemática. Sin metadatos ni números de teléfono vinculados.</div>
+          </div>
+          <span style="margin-left:auto;font-size:0.8rem;color:var(--text3)">→</span>
+        </a>
+
+        <a href="mailto:info@hardtocrack.com" class="simplex-badge" style="text-decoration:none;transition:border-color 0.2s">
+          <span>✉️</span>
+          <div>
+            <div style="color:var(--text2);font-weight:700">Correo Electrónico · info@hardtocrack.com</div>
+            <div style="font-size:0.75rem;color:var(--text3);margin-top:0.2rem">Para primeros contactos por escrito (no recomendado para compartir datos críticos).</div>
+          </div>
+          <span style="margin-left:auto;font-size:0.8rem;color:var(--text3)">→</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="blog-section" id="blog-preview">
+    <div class="section-tag">// Cultura de Seguridad y OPSEC</div>
+    <h2>Artículos de Inteligencia Digital.</h2>
+    <div class="blog-grid">
+      <a class="blog-card" onclick="showBlog('post1')" href="#">
+        <div class="blog-thumb">🔒</div>
+        <div class="blog-body">
+          <div class="blog-cat">Privacidad · Fundamentos</div>
+          <h3>Por qué Android stock es una amenaza para tu privacidad en 2026</h3>
+          <p>Un análisis técnico de la telemetría integrada en Android y los servicios ocultos comerciales.</p>
+          <div class="blog-date">Enero 2026</div>
+        </div>
+      </a>
+      <a class="blog-card" onclick="showBlog('post2')" href="#">
+        <div class="blog-thumb">₿</div>
+        <div class="blog-body">
+          <div class="blog-cat">OPSEC · Cripto</div>
+          <h3>Cómo proteger tus wallets de cripto desde el móvil</h3>
+          <p>Blindaje de entornos móviles frente a ataques dirigidos de clonación de SIM y troyanos de memoria.</p>
+          <div class="blog-date">Febrero 2026</div>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:3rem">
+      <a onclick="showPage('blog')" href="#" class="btn-secondary">Ver el blog completo →</a>
+    </div>
+  </section>
+
+</div>
+
+<div id="page-blog" class="page">
+  <div style="padding-top:64px">
+
+    <div id="blog-post1" class="page" style="display:none">
+      <div class="article-wrapper">
+        <button class="back-btn" onclick="showPage('blog')">← Volver al blog</button>
+        <div class="article-meta">Privacidad · Fundamentos · 2026</div>
+        <h1>Por qué Android stock es una amenaza para tu privacidad en 2026</h1>
+        <div class="article-body">
+          <p>El ecosistema móvil tradicional basa su rentabilidad en la monitorización conductual. Cada interacción, paquete de localización y consulta genera un rastro permanente procesado de forma masiva en la nube de las Big Tech.</p>
+          <h2>El problema estructural</h2>
+          <p>Las ROMs comerciales integran servicios esenciales a nivel de kernel con privilegios absolutos de ejecución, haciendo inviable el bloqueo por medio de capas externas o aplicaciones tradicionales de cortafuegos.</p>
+          <h2>La alternativa real</h2>
+          <p>La sustitución integral por sistemas limpios y auditables basados en código abierto permite asegurar la soberanía del dato y aislar aplicaciones comerciales de forma criptográfica.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="blog-post2" class="page" style="display:none">
+      <div class="article-wrapper">
+        <button class="back-btn" onclick="showPage('blog')">← Volver al blog</button>
+        <div class="article-meta">OPSEC · Cripto · 2026</div>
+        <h1>Cómo proteger tus wallets de cripto desde el móvil</h1>
+        <div class="article-body">
+          <p>Los dispositivos móviles comerciales son el vector de ataque más explotado en robos de activos digitales debido a debilidades en la gestión de portapapeles y captura de datos biométricos.</p>
+          <h2>Sandboxing como pilar fundamental</h2>
+          <p>Almacenar claves o interactuar con aplicaciones financieras sobre sistemas vulnerables expone tus credenciales. Aislar las aplicaciones críticas mediante perfiles dedicados y sin persistencia en segundo plano mitiga drásticamente las brechas de seguridad.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="blog-index" class="page active" style="padding:120px 5% 80px">
+      <div class="section-tag">// Conocimiento Técnico</div>
+      <h2>Privacidad, Ciberseguridad y OPSEC.</h2>
+      <div class="blog-grid">
+        <a class="blog-card" onclick="showBlog('post1')" href="#">
+          <div class="blog-thumb">🔒</div>
+          <div class="blog-body">
+            <div class="blog-cat">Privacidad · Fundamentos</div>
+            <h3>Por qué Android stock es una amenaza para tu privacidad en 2026</h3>
+            <p>Análisis de las comunicaciones raíz invisibles de los sistemas operativos comerciales.</p>
+            <div class="blog-date">Enero 2026</div>
+          </div>
+        </a>
+        <a class="blog-card" onclick="showBlog('post2')" href="#">
+          <div class="blog-thumb">₿</div>
+          <div class="blog-body">
+            <div class="blog-cat">OPSEC · Cripto</div>
+            <h3>Cómo proteger tus wallets de cripto desde el móvil</h3>
+            <p>Protocolos de contención criptográfica para asegurar tus activos.</p>
+            <div class="blog-date">Febrero 2026</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="page-empresa" class="page">
+
+  <section class="emp-hero" id="emp-why">
+    <div class="emp-hero-grid"></div>
+    <div class="emp-glow"></div>
+    <div class="emp-glow2"></div>
+    <div class="hero-content">
+      <div class="emp-tag"><span class="blink" style="background:#a78bfa"></span> Soluciones para Empresa · 2–20 terminales</div>
+      <h1>Privacidad corporativa.<br><span class="accent-purple">Sin departamento IT.</span><br><span class="accent-indigo">Sin burocracia.</span></h1>
+      <p class="hero-sub">Equipamos a tu equipo con terminales blindados, servicios anuales activos y soporte humano directo. Presupuesto por dispositivo, descuento por volumen, entrega coordinada. Un solo interlocutor que conoce tu caso.</p>
+      <div class="hero-buttons">
+        <a href="#emp-packs" class="btn-primary" style="background:linear-gradient(135deg,#7c3aed,#4f46e5);box-shadow:0 4px 20px rgba(124,58,237,0.3)">Ver Precios por Volumen →</a>
+        <a href="#emp-contact" class="btn-secondary">Llamada de Diagnóstico Gratuita</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="emp-stat-card">
+        <span class="emp-stat-num">2–20</span>
+        <span class="stat-label">Terminales<br>por proyecto</span>
+      </div>
+      <div class="emp-stat-card">
+        <span class="emp-stat-num">-8%</span>
+        <span class="stat-label">Descuento desde<br>5 dispositivos</span>
+      </div>
+      <div class="emp-stat-card">
+        <span class="emp-stat-num">3m</span>
+        <span class="stat-label">Soporte técnico<br>por terminal</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="section-tag" style="color:#a78bfa">// El riesgo real en el móvil corporativo</div>
+    <h2>El móvil de empresa es el<br>vector de ataque más ignorado.</h2>
+    <div class="why-intro">
+      <p>El 68% de las brechas de datos corporativas en pequeñas empresas tienen origen en un dispositivo móvil no gestionado. Un teléfono con Android estándar transmite metadatos de comunicación, ubicación y comportamiento a servidores externos de forma continua — incluyendo datos de clientes, conversaciones internas y credenciales de acceso.</p>
+      <p>No necesitas un departamento IT para protegerte. Necesitas los terminales correctos, configurados correctamente, entregados listos para usar.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">🕵️</span>
+        <h3>Espionaje corporativo y fuga de datos</h3>
+        <p>Las comunicaciones no cifradas entre directivos, con clientes o sobre operaciones financieras son accesibles mediante ataques MITM, SIM swapping o acceso físico al dispositivo.</p>
+        <div class="threat-list">
+          <div class="threat-item">⚠ Interceptación de llamadas y mensajes</div>
+          <div class="threat-item">⚠ Exfiltración de contactos y documentos</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">⚖️</span>
+        <h3>Responsabilidad legal y RGPD</h3>
+        <p>Los datos de clientes almacenados en un teléfono Android estándar pueden estar siendo procesados por terceros sin consentimiento. La responsabilidad legal recae sobre la empresa, no sobre Google.</p>
+        <div class="threat-list">
+          <div class="threat-item">⚠ Multas RGPD por procesamiento no autorizado</div>
+          <div class="threat-item">⚠ Vulneración del secreto profesional</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🛡️</span>
+        <h3>La solución hardtocrack para empresa</h3>
+        <p>Cada terminal entregado es un entorno criptográficamente aislado. Las comunicaciones no pueden ser interceptadas. Los datos de clientes no salen del dispositivo sin tu control. El sistema no reporta a ningún servidor externo.</p>
+        <div class="threat-list" style="margin-top:0.8rem">
+          <div class="threat-item" style="color:#a78bfa;background:rgba(124,58,237,0.06);border-color:#7c3aed">→ Cumplimiento RGPD real en el canal móvil</div>
+          <div class="threat-item" style="color:#a78bfa;background:rgba(124,58,237,0.06);border-color:#7c3aed">→ Secreto profesional protegido por diseño</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="emp-sectores" style="padding:100px 5%">
+    <div class="section-tag" style="color:#a78bfa">// Sectores que ya trabajan con hardtocrack</div>
+    <h2>Diseñado para profesionales<br>que manejan información crítica.</h2>
+    <div class="sector-grid">
+      <div class="sector-card">
+        <span class="sector-icon">⚖️</span>
+        <h3>Despachos de Abogados y Notarías</h3>
+        <p>Secreto profesional protegido a nivel criptográfico. Comunicaciones con clientes que no pueden ser interceptadas ni extraídas de un dispositivo comprometido. Cumplimiento del deber deontológico en el canal digital.</p>
+        <span class="sector-tag">Secreto profesional</span>
+      </div>
+      <div class="sector-card">
+        <span class="sector-icon">📈</span>
+        <h3>Family Offices y Gestoras de Patrimonio</h3>
+        <p>Comunicaciones sobre operaciones financieras, gestión de carteras y activos digitales blindadas. Nada que competidores o atacantes puedan interceptar antes de que ejecutes una operación de mercado.</p>
+        <span class="sector-tag">Capital protegido</span>
+      </div>
+      <div class="sector-card">
+        <span class="sector-icon">🏥</span>
+        <h3>Clínicas, Médicos y Psicólogos</h3>
+        <p>Datos clínicos de pacientes aislados criptográficamente del resto del sistema. Comunicaciones internas sin trazabilidad externa. Cumplimiento real de la Ley de Protección de Datos en el canal móvil.</p>
+        <span class="sector-tag">RGPD · Datos de salud</span>
+      </div>
+      <div class="sector-card">
+        <span class="sector-icon">🏢</span>
+        <h3>Consultoras y Dirección Ejecutiva</h3>
+        <p>Comunicaciones entre socios, con clientes de alto valor y sobre estrategia empresarial sin exposición a espionaje corporativo. Perfiles aislados por cliente o proyecto sin mezcla de información.</p>
+        <span class="sector-tag">Compartimentación ejecutiva</span>
+      </div>
+      <div class="sector-card">
+        <span class="sector-icon">🔐</span>
+        <h3>Periodistas e Investigadores</h3>
+        <p>Fuentes protegidas matemáticamente. Entorno de trabajo que resiste análisis forense. Comunicación con fuentes anónimas sin metadata vinculante que pueda comprometer la investigación.</p>
+        <span class="sector-tag">Protección de fuentes</span>
+      </div>
+      <div class="sector-card">
+        <span class="sector-icon">🏗️</span>
+        <h3>Constructoras y Promotores Inmobiliarios</h3>
+        <p>Negociaciones de compraventa, información sobre solares y operaciones inmobiliarias de alto valor gestionadas en canales que no pueden ser interceptados por competidores ni por terceros.</p>
+        <span class="sector-tag">Operaciones confidenciales</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--bg2);border-top:1px solid var(--border);padding:100px 5%" id="emp-packs">
+    <div class="section-tag" style="color:#a78bfa">// Precios por volumen</div>
+    <h2>Un pack completo por terminal.<br>Descuento desde el 2.º dispositivo.</h2>
+    <p style="color:var(--text2);max-width:680px;line-height:1.7;margin-top:1rem">El precio base por terminal incluye todo lo del Pack VIP Particulares. El descuento por volumen se aplica sobre el total de servicios y configuración — el hardware se presupuesta a precio de mercado según modelo elegido.</p>
+
+    <div style="max-width:700px;margin-top:2.5rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;overflow:hidden">
+      <table class="volume-table">
+        <thead>
+          <tr>
+            <th>Nº de terminales</th>
+            <th>Precio pack / terminal</th>
+            <th>Descuento</th>
+            <th>Ahorro total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 terminal</td>
+            <td class="highlight">415 €</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>2–4 terminales</td>
+            <td class="highlight">398 €</td>
+            <td class="saving">-4%</td>
+            <td class="saving">hasta 68 €</td>
+          </tr>
+          <tr>
+            <td>5–9 terminales</td>
+            <td class="highlight">382 €</td>
+            <td class="saving">-8%</td>
+            <td class="saving">hasta 297 €</td>
+          </tr>
+          <tr>
+            <td>10–20 terminales</td>
+            <td class="highlight">365 €</td>
+            <td class="saving">-12%</td>
+            <td class="saving">hasta 600 €</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-family:var(--mono);font-size:0.72rem;color:var(--text3);margin-top:0.8rem">* Precios de pack (servicios + accesorios). Hardware según modelo elegido. IVA no incluido.</p>
+
+    <div class="emp-pack-grid" style="margin-top:3rem">
+
+      <div class="emp-pack-card">
+        <div style="font-family:var(--mono);font-size:0.65rem;color:#a78bfa;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.4rem">// Línea Esencial</div>
+        <div class="emp-pack-name">Pack Empresa Básico</div>
+        <div class="emp-pack-sub">2–4 terminales · Arranque rápido</div>
+        <div class="emp-pack-price">398 €<span style="font-size:1rem;color:var(--text3)">/terminal</span></div>
+        <div class="emp-pack-note">Todo el Pack VIP Particulares por dispositivo con descuento del 4%. Ideal para despachos pequeños y consultoras de 2–4 personas.</div>
+        <ul class="pack-includes">
+          <li>Todo incluido del Pack VIP Particulares</li>
+          <li>1 mes soporte técnico por terminal (SimpleX)</li>
+          <li>Onboarding por audio para cada usuario</li>
+          <li>Manual impreso incluido por dispositivo</li>
+          <li>Envío discreto coordinado en un solo envío</li>
+        </ul>
+        <a href="#emp-contact" class="btn-secondary" style="width:100%;text-align:center;display:block;margin-top:1.5rem">Solicitar Presupuesto →</a>
+      </div>
+
+      <div class="emp-pack-card featured">
+        <div class="emp-rec-badge">MÁS ELEGIDO POR EMPRESAS</div>
+        <div style="font-family:var(--mono);font-size:0.65rem;color:#a78bfa;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.4rem">// Línea Profesional</div>
+        <div class="emp-pack-name">Pack Empresa Pro</div>
+        <div class="emp-pack-sub">5–9 terminales · Gestión centralizada</div>
+        <div class="emp-pack-price">382 €<span style="font-size:1rem;color:var(--text3)">/terminal</span></div>
+        <div class="emp-pack-note">El más equilibrado para equipos medianos. Descuento del 8% sobre el pack base. Incluye soporte ampliado, gestión centralizada de renovaciones y formación del equipo.</div>
+        <ul class="pack-includes">
+          <li>Todo incluido del Pack VIP Particulares</li>
+          <li>3 meses soporte técnico por terminal</li>
+          <li>Gestión centralizada de renovaciones anuales</li>
+          <li>Onboarding por audio para cada usuario</li>
+          <li>Configuración de perfiles diferenciados por rol</li>
+          <li>Entrega coordinada con tracking privado</li>
+        </ul>
+        <a href="#emp-contact" class="btn-primary" style="width:100%;text-align:center;display:block;margin-top:1.5rem;background:linear-gradient(135deg,#7c3aed,#4f46e5)">Cerrar Pack Pro →</a>
+      </div>
+
+      <div class="emp-pack-card">
+        <div style="font-family:var(--mono);font-size:0.65rem;color:#818cf8;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.4rem">// Línea Enterprise</div>
+        <div class="emp-pack-name">Pack Enterprise</div>
+        <div class="emp-pack-sub">10–20 terminales · Flota completa</div>
+        <div class="emp-pack-price">365 €<span style="font-size:1rem;color:var(--text3)">/terminal</span></div>
+        <div class="emp-pack-note">Para empresas que necesitan blindar toda su flota móvil. Descuento del 12% sobre el pack base. Gestión integral, soporte prioritario y renovación automática gestionada.</div>
+        <ul class="pack-includes">
+          <li>Todo incluido del Pack Pro</li>
+          <li>6 meses soporte técnico por terminal</li>
+          <li>Renovación anual de licencias gestionada</li>
+          <li>Reposición prioritaria ante avería o pérdida</li>
+          <li>Consultoría de política de seguridad móvil</li>
+          <li>Interlocutor dedicado para el proyecto</li>
+        </ul>
+        <a href="#emp-contact" class="btn-secondary" style="width:100%;text-align:center;display:block;margin-top:1.5rem;border-color:#7c3aed;color:#a78bfa">Solicitar Propuesta →</a>
+      </div>
+
+    </div>
+
+    <div class="addons-section">
+      <div class="addons-title" style="color:#a78bfa">// Add-ons para empresas (por terminal o por flota)</div>
+      <div class="addon-grid">
+        <div class="addon-item">
+          <div>
+            <div class="addon-name">Router Mudi V2 por puesto</div>
+            <div class="pay-note">WireGuard · Kill Switch · batería 7000mAh · OLED</div>
+          </div>
+          <div class="addon-price" style="color:#a78bfa">430 €</div>
+        </div>
+        <div class="addon-item">
+          <div>
+            <div class="addon-name">Pendrive Samsung Tails</div>
+            <div class="pay-note">Sistema amnésico para ordenadores de la empresa</div>
+          </div>
+          <div class="addon-price" style="color:#a78bfa">145 €</div>
+        </div>
+        <div class="addon-item">
+          <div>
+            <div class="addon-name">Pendrive Samsung VeraCrypt</div>
+            <div class="pay-note">Almacenamiento cifrado doble fondo por usuario</div>
+          </div>
+          <div class="addon-price" style="color:#a78bfa">155 €</div>
+        </div>
+        <div class="addon-item">
+          <div>
+            <div class="addon-name">Soporte técnico mensual (flota)</div>
+            <div class="pay-note">Canal SimpleX · humano · todos los terminales</div>
+          </div>
+          <div class="addon-price" style="color:#a78bfa">Consultar</div>
+        </div>
+        <div class="addon-item">
+          <div>
+            <div class="addon-name">Formación de equipo (sesión)</div>
+            <div class="pay-note">Audio o vídeo cifrado · 60–90 min · grupo</div>
+          </div>
+          <div class="addon-price" style="color:#a78bfa">Consultar</div>
+        </div>
+        <div class="addon-item">
+          <div>
+            <div class="addon-name">Auditoría de seguridad móvil</div>
+            <div class="pay-note">Revisión del estado actual de los dispositivos</div>
+          </div>
+          <div class="addon-price" style="color:#a78bfa">Consultar</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="emp-proceso" style="padding:100px 5%">
+    <div class="section-tag" style="color:#a78bfa">// Cómo trabajamos</div>
+    <h2>De cero a flota blindada<br>en menos de dos semanas.</h2>
+    <div class="emp-proceso">
+      <div class="emp-step">
+        <span class="emp-step-num">01</span>
+        <h3>Llamada de diagnóstico gratuita</h3>
+        <p>30 minutos para entender el perfil de riesgo de tu empresa, el número de terminales necesarios y el nivel de privacidad requerido por rol.</p>
+      </div>
+      <div class="emp-step">
+        <span class="emp-step-num">02</span>
+        <h3>Presupuesto detallado</h3>
+        <p>Enviado por canal seguro en 24h. Desglose por dispositivo, modelo elegido, servicios incluidos y descuento por volumen aplicado.</p>
+      </div>
+      <div class="emp-step">
+        <span class="emp-step-num">03</span>
+        <h3>Adquisición y configuración</h3>
+        <p>Gestionamos la compra de todos los terminales. Cada uno se configura individualmente con GrapheneOS y los servicios activos.</p>
+      </div>
+      <div class="emp-step">
+        <span class="emp-step-num">04</span>
+        <h3>Entrega coordinada</h3>
+        <p>Todos los dispositivos empaquetados en un único envío discreto o entregas individuales según preferencia. Con manuales y tarjetas de bienvenida.</p>
+      </div>
+      <div class="emp-step">
+        <span class="emp-step-num">05</span>
+        <h3>Onboarding y soporte</h3>
+        <p>Sesión de activación por audio para cada usuario. Canal de soporte SimpleX activo desde el primer día. Sin tickets, sin bots.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--bg2);border-top:1px solid var(--border);padding:100px 5%" id="emp-contact">
+    <div class="section-tag" style="color:#a78bfa">// Canal directo para empresas</div>
+    <h2>Cuéntanos tu proyecto.<br>Presupuesto en 24 horas.</h2>
+    <div class="emp-contact-inner" style="margin-top:2rem">
+      <p>La forma más eficiente de estructurar el presupuesto para tu empresa es mediante una llamada de diagnóstico de 30 minutos. Sin compromiso. Sin formularios. Elige el canal que prefieras.</p>
+
+      <div style="display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem">
+        <a href="https://t.me/HardToCrackOS" target="_blank" class="emp-badge hot" style="text-decoration:none">
+          <span>✈️</span>
+          <div>
+            <div style="color:#a78bfa;font-weight:700">Telegram · @HardToCrackOS</div>
+            <div style="font-size:0.75rem;color:var(--text2);margin-top:0.2rem">Canal más rápido para coordinar una llamada o enviar una solicitud de presupuesto.</div>
+          </div>
+          <span style="margin-left:auto;font-size:0.8rem;color:#a78bfa">→</span>
+        </a>
+        <a href="https://smp5.simplexonflux.com/a#Qi96g6HsSbpV7x7uRfYqbPFIkzGbksDGFrM-diL-LQA" target="_blank" class="emp-badge" style="text-decoration:none">
+          <span>💬</span>
+          <div>
+            <div style="color:var(--accent);font-weight:700">SimpleX Chat · Canal cifrado de extremo a extremo</div>
+            <div style="font-size:0.75rem;color:var(--text3);margin-top:0.2rem">Para empresas que ya priorizan la privacidad en sus comunicaciones. Sin metadatos ni números de teléfono.</div>
+          </div>
+          <span style="margin-left:auto;font-size:0.8rem;color:var(--text3)">→</span>
+        </a>
+        <a href="mailto:info@hardtocrack.com" class="emp-badge" style="text-decoration:none">
+          <span>✉️</span>
+          <div>
+            <div style="color:var(--text2);font-weight:700">Email · info@hardtocrack.com</div>
+            <div style="font-size:0.75rem;color:var(--text3);margin-top:0.2rem">Para solicitudes formales por escrito. Respuesta en 24h laborables.</div>
+          </div>
+          <span style="margin-left:auto;font-size:0.8rem;color:var(--text3)">→</span>
+        </a>
+      </div>
+
+      <div style="margin-top:3rem;padding:1.8rem;background:rgba(124,58,237,0.05);border:1px solid rgba(124,58,237,0.2);border-radius:6px">
+        <div style="font-family:var(--mono);font-size:0.72rem;color:#a78bfa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem">// Qué tener listo para la llamada</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
+          <li style="font-size:0.9rem;color:var(--text2);display:flex;gap:0.6rem;align-items:flex-start"><span style="color:#a78bfa;flex-shrink:0">→</span>Número aproximado de terminales necesarios</li>
+          <li style="font-size:0.9rem;color:var(--text2);display:flex;gap:0.6rem;align-items:flex-start"><span style="color:#a78bfa;flex-shrink:0">→</span>Sector de actividad y tipo de información manejada</li>
+          <li style="font-size:0.9rem;color:var(--text2);display:flex;gap:0.6rem;align-items:flex-start"><span style="color:#a78bfa;flex-shrink:0">→</span>Si ya tienes terminales propios o necesitas adquisición</li>
+          <li style="font-size:0.9rem;color:var(--text2);display:flex;gap:0.6rem;align-items:flex-start"><span style="color:#a78bfa;flex-shrink:0">→</span>Plazo estimado de entrega deseado</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ══════════════════════════════════════════
+     PÁGINA TIENDA — DOSSIER
+═══════════════════════════════════════════ -->
+<div id="page-shop" class="page">
+
+  <section class="shop-hero">
+    <div class="shop-tag">// Publicaciones · Divulgación técnica</div>
+    <h1>Manuales Operativos<br><span class="accent-amber">de Campo 2026.</span></h1>
+    <p class="hero-sub" style="max-width:600px">52 páginas de protocolos operativos aplicados. Sin teoría. Sin relleno. GrapheneOS, Tails, VeraCrypt, Monero, OpSec y más. Disponible en digital y en copia impresa.</p>
+  </section>
+
+  <div class="shop-grid">
+
+    <!-- LEFT: visual + pricing -->
+    <div class="shop-product-visual">
+      <div class="shop-cover-mock">
+        <div class="mock-title">HARDTOCRACK</div>
+        <div class="mock-line"></div>
+        <div class="mock-year">2026</div>
+        <div class="mock-badge">Manuales Operativos de Campo</div>
+        <div class="shop-format-pills">
+          <span class="fmt-pill fmt-digital">PDF · A5</span>
+          <span class="fmt-pill fmt-hard">Copia impresa</span>
+        </div>
+      </div>
+
+      <div class="price-block" style="margin-top:1.5rem">
+        <div style="font-family:var(--mono);font-size:0.65rem;color:#fbbf24;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.8rem">// Precios</div>
+        <div class="price-row">
+          <div class="price-label">Archivo digital (PDF)<small>Entrega inmediata · Signal / SimpleX / email</small></div>
+          <div class="price-val">49 €</div>
+        </div>
+        <div class="price-row">
+          <div class="price-label">Copia impresa (hardcopy)<small>A5 · 52 pág. · fresado tapa blanda</small></div>
+          <div class="price-val amber">79 €</div>
+        </div>
+      </div>
+
+      <div class="price-block" style="margin-top:1rem">
+        <div style="font-family:var(--mono);font-size:0.65rem;color:#fbbf24;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.8rem">// Descuento por cantidad</div>
+        <div class="price-row">
+          <div class="price-label">1 unidad</div>
+          <div class="price-val" style="font-size:0.9rem">Precio estándar</div>
+        </div>
+        <div class="price-row">
+          <div class="price-label">2 unidades<small>−4% sobre el total</small></div>
+          <div class="price-val saving">PDF 47,04 € · Hard 75,84 €</div>
+        </div>
+        <div class="price-row">
+          <div class="price-label">3 unidades<small>−8% sobre el total</small></div>
+          <div class="price-val saving">PDF 45,08 € · Hard 72,68 €</div>
+        </div>
+      </div>
+
+      <div style="font-family:var(--mono);font-size:0.65rem;color:#fbbf24;text-transform:uppercase;letter-spacing:0.12em;margin:1.5rem 0 0.6rem">// Pago aceptado</div>
+      <div class="pay-methods">
+        <div class="pay-method hot">
+          <span class="pay-icon">⬡</span>
+          <div><span class="pay-name">Monero (XMR)</span><span class="pay-note">Preferido · privacidad total · dirección bajo petición</span></div>
+        </div>
+        <div class="pay-method">
+          <span class="pay-icon">₿</span>
+          <div><span class="pay-name">Bitcoin (BTC)</span><span class="pay-note">Aceptado · dirección bajo petición</span></div>
+        </div>
+        <div class="pay-method">
+          <span class="pay-icon">💬</span>
+          <div><span class="pay-name">Otros métodos</span><span class="pay-note">Consultar disponibilidad por canal de contacto</span></div>
+        </div>
+      </div>
+
+      <div style="font-family:var(--mono);font-size:0.65rem;color:#fbbf24;text-transform:uppercase;letter-spacing:0.12em;margin:1.5rem 0 0.6rem">// Entrega digital</div>
+      <div class="pay-methods">
+        <div class="pay-method">
+          <span class="pay-icon">💬</span>
+          <div><span class="pay-name">SimpleX Chat</span><span class="pay-note">Sin número de teléfono · cifrado E2E · preferido</span></div>
+        </div>
+        <div class="pay-method">
+          <span class="pay-icon">✈️</span>
+          <div><span class="pay-name">Signal / Session / Telegram</span><span class="pay-note">Bajo petición en el canal de contacto</span></div>
+        </div>
+        <div class="pay-method">
+          <span class="pay-icon">✉️</span>
+          <div><span class="pay-name">Email</span><span class="pay-note">info@hardtocrack.com</span></div>
+        </div>
+      </div>
+
+      <a href="#shop-contact" class="btn-primary" style="display:block;text-align:center;margin-top:1.5rem;background:linear-gradient(135deg,#d97706,#fbbf24);color:#000;font-weight:700">Solicitar y Pagar →</a>
+    </div>
+
+    <!-- RIGHT: full index -->
+    <div>
+      <div style="font-family:var(--mono);font-size:0.65rem;color:#fbbf24;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:1.2rem">// Índice completo — 52 páginas</div>
+      <div class="index-section">
+
+        <div class="index-manual">
+          <div class="index-manual-head" onclick="toggleIdx(this)">
+            <span class="index-manual-title">MANUAL I — GrapheneOS · Usuario Avanzado</span>
+            <span class="index-manual-pg">Págs. 5–13</span>
+          </div>
+          <div class="index-items">
+            <div class="index-item"><span>1. Fundamentos físicos y Arranque Seguro (Verified Boot · Titan M2)</span><span class="index-item-pg">5</span></div>
+            <div class="index-item"><span>2. Arquitectura de Aislamiento — Sandboxing y perfiles aislados</span><span class="index-item-pg">6</span></div>
+            <div class="index-item"><span>3. VPN Always-on · Kill Switch a nivel de kernel</span><span class="index-item-pg">7</span></div>
+            <div class="index-item"><span>4. Soberanía del Email — SimpleLogin · Tuta · aliases</span><span class="index-item-pg">8</span></div>
+            <div class="index-item"><span>5. Registro de dominios anónimos — Arquitectura Njal.la</span><span class="index-item-pg">9</span></div>
+            <div class="index-item"><span>6. Acceso de máxima capa — Red Tor · obfs4</span><span class="index-item-pg">10</span></div>
+            <div class="index-item"><span>7. Flujo financiero No-KYC — Ingeniería de liquidez</span><span class="index-item-pg">11</span></div>
+          </div>
+        </div>
+
+        <div class="index-manual">
+          <div class="index-manual-head" onclick="toggleIdx(this)">
+            <span class="index-manual-title">MANUAL II — Router Portátil Defensivo Mudi V2</span>
+            <span class="index-manual-pg">Págs. 14–18</span>
+          </div>
+          <div class="index-items">
+            <div class="index-item"><span>1. Especificaciones técnicas y entorno de uso</span><span class="index-item-pg">14</span></div>
+            <div class="index-item"><span>2. Protocolo de conexión e inicialización celular</span><span class="index-item-pg">15</span></div>
+            <div class="index-item"><span>3. WireGuard · Kill Switch · DNS over TLS</span><span class="index-item-pg">16</span></div>
+            <div class="index-item"><span>4. Almacenamiento local cifrado (MicroSD · LUKS)</span><span class="index-item-pg">18</span></div>
+          </div>
+        </div>
+
+        <div class="index-manual">
+          <div class="index-manual-head" onclick="toggleIdx(this)">
+            <span class="index-manual-title">MANUAL III — Protocolo de Comportamiento OpSec</span>
+            <span class="index-manual-pg">Págs. 19–22</span>
+          </div>
+          <div class="index-items">
+            <div class="index-item"><span>1. El entorno Tails — Amnesia electrónica</span><span class="index-item-pg">19</span></div>
+            <div class="index-item"><span>2. Mitigación de correlación de identidad</span><span class="index-item-pg">20</span></div>
+            <div class="index-item"><span>3. Expansiones de hardware (YubiKey · VeraCrypt)</span><span class="index-item-pg">21</span></div>
+            <div class="index-item"><span>4. Protocolo de destrucción de emergencia — Wipe</span><span class="index-item-pg">22</span></div>
+          </div>
+        </div>
+
+        <div class="index-manual">
+          <div class="index-manual-head" onclick="toggleIdx(this)">
+            <span class="index-manual-title">MANUAL IV — Tails · Amnesia Electrónica</span>
+            <span class="index-manual-pg">Págs. 23–24</span>
+          </div>
+          <div class="index-items">
+            <div class="index-item"><span>1. Arquitectura del SO en vivo — Debian · RAM only</span><span class="index-item-pg">23</span></div>
+            <div class="index-item"><span>2. Configuración bienvenida · Almacenamiento persistente LUKS</span><span class="index-item-pg">24</span></div>
+          </div>
+        </div>
+
+        <div class="index-manual">
+          <div class="index-manual-head" onclick="toggleIdx(this)">
+            <span class="index-manual-title">MANUAL V — VeraCrypt · Doble Fondo</span>
+            <span class="index-manual-pg">Págs. 25–26</span>
+          </div>
+          <div class="index-items">
+            <div class="index-item"><span>1. Principio de denegación plausible</span><span class="index-item-pg">25</span></div>
+            <div class="index-item"><span>2. Protocolo de montaje · Anti-corrupción del volumen oculto</span><span class="index-item-pg">26</span></div>
+          </div>
+        </div>
+
+        <div class="index-manual">
+          <div class="index-manual-head" onclick="toggleIdx(this)">
+            <span class="index-manual-title">MANUAL VI — YubiKey · Tokens FIDO2</span>
+            <span class="index-manual-pg">Págs. 27–29</span>
+          </div>
+          <div class="index-items">
+            <div class="index-item"><span>1. Fundamentos del factor de hardware físico</span><span class="index-item-pg">27</span></div>
+            <div class="index-item"><span>2. Integración con KeePassXC · Bitwarden · WebAuthn</span><span class="index-item-pg">28</span></div>
+            <div class="index-item"><span>3. Registro via Tor · token de respaldo</span><span class="index-item-pg">29</span></div>
+          </div>
+        </div>
+
+        <div class="index-manual">
+          <div class="index-manual-head" onclick="toggleIdx(this)">
+            <span class="index-manual-title">MANUAL VII — Almacenamiento Oculto · Esteganografía</span>
+            <span class="index-manual-pg">Págs. 30–32</span>
+          </div>
+          <div class="index-items">
+            <div class="index-item"><span>1. Ocultación física — El principio del objeto aburrido</span><span class="index-item-pg">30</span></div>
+            <div class="index-item"><span>2. Micro-tarjetas en objetos cotidianos</span><span class="index-item-pg">31</span></div>
+            <div class="index-item"><span>3. Esteganografía digital — LSB · Steghide desde Tails</span><span class="index-item-pg">32</span></div>
+          </div>
+        </div>
+
+        <div class="index-manual">
+          <div class="index-manual-head" onclick="toggleIdx(this)">
+            <span class="index-manual-title">MANUAL VIII — Protocolo Financiero No-KYC</span>
+            <span class="index-manual-pg">Págs. 33–36</span>
+          </div>
+          <div class="index-items">
+            <div class="index-item"><span>1. Ecosistema Monero — Ring Signatures · Stealth · RingCT</span><span class="index-item-pg">33</span></div>
+            <div class="index-item"><span>2. Wallets de hardware · semillas mnemónicas en frío</span><span class="index-item-pg">34</span></div>
+            <div class="index-item"><span>3. Tarjetas prepago no-KYC</span><span class="index-item-pg">35</span></div>
+            <div class="index-item"><span>4. Nodo propio Monero (Raspberry Pi · hidden service Tor)</span><span class="index-item-pg">36</span></div>
+          </div>
+        </div>
+
+        <div class="index-manual">
+          <div class="index-manual-head" onclick="toggleIdx(this)">
+            <span class="index-manual-title">MANUAL IX — Auditoría de Seguridad Personal</span>
+            <span class="index-manual-pg">Págs. 37–40</span>
+          </div>
+          <div class="index-items">
+            <div class="index-item"><span>1. Metodología de la superficie de ataque — 4 dominios</span><span class="index-item-pg">37</span></div>
+            <div class="index-item"><span>2. Checklist operativo semanal</span><span class="index-item-pg">38</span></div>
+            <div class="index-item"><span>3. Respuesta a incidentes (niveles 1 / 2 / 3)</span><span class="index-item-pg">39</span></div>
+            <div class="index-item"><span>4. Evaluación de confianza en proveedores</span><span class="index-item-pg">40</span></div>
+          </div>
+        </div>
+
+        <div class="index-manual">
+          <div class="index-manual-head" onclick="toggleIdx(this)">
+            <span class="index-manual-title">APÉNDICES A · B · C · D</span>
+            <span class="index-manual-pg">Págs. 41–48</span>
+          </div>
+          <div class="index-items">
+            <div class="index-item"><span>A — Glosario técnico (20+ términos)</span><span class="index-item-pg">41</span></div>
+            <div class="index-item"><span>B — Tabla comparativa de apps (mensajería · VPN · email · browsers)</span><span class="index-item-pg">43</span></div>
+            <div class="index-item"><span>C — Proveedores verificados (Mullvad · Njal.la · Tuta · Haveno…)</span><span class="index-item-pg">45</span></div>
+            <div class="index-item"><span>D — Referencia rápida de comandos (Tails · GrapheneOS · Mudi V2 SSH)</span><span class="index-item-pg">47</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CONTACT -->
+      <div id="shop-contact" style="margin-top:3rem;padding:2rem;background:var(--surface);border:1px solid rgba(251,191,36,0.2);border-radius:6px">
+        <div style="font-family:var(--mono);font-size:0.65rem;color:#fbbf24;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:1rem">// Cómo comprar</div>
+        <p style="font-size:0.9rem;color:var(--text2);line-height:1.7;margin-bottom:1.2rem">Indica el formato (digital / hardcopy) y la cantidad. Te enviamos la dirección de pago. En cuanto confirmamos la transacción entregamos el archivo o gestionamos el envío físico.</p>
+        <div style="display:flex;flex-direction:column;gap:0.8rem">
+          <a href="https://t.me/HardToCrackOS" target="_blank" class="pay-method hot" style="text-decoration:none">
+            <span class="pay-icon">✈️</span>
+            <div><span class="pay-name">Telegram · @HardToCrackOS</span><span class="pay-note">Canal más rápido para coordinar pago y entrega</span></div>
+          </a>
+          <a href="https://smp5.simplexonflux.com/a#Qi96g6HsSbpV7x7uRfYqbPFIkzGbksDGFrM-diL-LQA" target="_blank" class="pay-method" style="text-decoration:none">
+            <span class="pay-icon">💬</span>
+            <div><span class="pay-name">SimpleX Chat</span><span class="pay-note">Sin número de teléfono · cifrado E2E · preferido para pago en cripto</span></div>
+          </a>
+          <a href="mailto:info@hardtocrack.com" class="pay-method" style="text-decoration:none">
+            <span class="pay-icon">✉️</span>
+            <div><span class="pay-name">info@hardtocrack.com</span><span class="pay-note">Para solicitudes por escrito — respuesta en 24h</span></div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /page-shop -->
+
+<div id="page-informe" class="page" style="display:none; padding:0; min-height:100vh;">
+  <iframe
+    src="hardtocrack-informe-grapheneos.html"
+    style="width:100%; height:100vh; border:none; display:block; margin-top:70px;"
+    title="Informe GrapheneOS 2026 — hardtocrack.link"
+  ></iframe>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo" onclick="showPage('main')">hard<span>to</span>crack</a>
+      <p>Pack Privacidad Total para perfiles VIP y pequeñas empresas. Terminal + GrapheneOS + servicios anuales + accesorios físicos + soporte humano. Llave en mano desde el primer encendido.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#packs">Pack VIP Todo Incluido</a></li>
+          <li><a href="#business">Soluciones Empresa</a></li>
+          <li><a href="#catalog">Terminales</a></li>
+          <li><a href="#shipping">Envío Discreto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto Seguro</h4>
+        <ul>
+          <li><a href="#contact">Telegram: @HardToCrackOS</a></li>
+          <li><a href="#contact">SimpleX Chat</a></li>
+          <li><a href="mailto:info@hardtocrack.com">info@hardtocrack.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">© 2026 HardToCrack · Todos los derechos reservados</div>
+  </div>
+</footer>
+
+<script>
+  // ── AUDIENCE SWITCHER ──────────────────────────
+  function switchAudience(audience) {
+    const isVip = audience === 'vip';
+    document.getElementById('tab-vip').classList.toggle('active', isVip);
+    document.getElementById('tab-empresa').classList.toggle('active', !isVip);
+    document.getElementById('tab-shop').classList.remove('active');
+    document.getElementById('tab-informe').classList.remove('active');
+    document.getElementById('nav-links-vip').style.display = isVip ? 'flex' : 'none';
+    document.getElementById('nav-links-empresa').style.display = isVip ? 'none' : 'flex';
+    document.getElementById('nav-cta-vip').style.display = isVip ? 'inline-block' : 'none';
+    document.getElementById('nav-cta-empresa').style.display = isVip ? 'none' : 'inline-block';
+    document.getElementById('page-main').classList.toggle('active', isVip);
+    document.getElementById('page-empresa').classList.toggle('active', !isVip);
+    document.getElementById('page-blog').classList.remove('active');
+    document.getElementById('page-shop').classList.remove('active');
+    window.scrollTo(0, 0);
+  }
+
+  function showPage(page) {
+    document.querySelectorAll('#page-main, #page-blog, #page-empresa, #page-shop, #page-informe').forEach(p => {
+      p.classList.remove('active');
+      p.style.display = 'none';
+    });
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('nav-links-vip').style.display = 'none';
+    document.getElementById('nav-links-empresa').style.display = 'none';
+    document.getElementById('nav-cta-vip').style.display = 'none';
+    document.getElementById('nav-cta-empresa').style.display = 'none';
+
+    if (page === 'main') {
+      document.getElementById('page-main').classList.add('active');
+      document.getElementById('page-main').style.display = 'block';
+      document.getElementById('tab-vip').classList.add('active');
+      document.getElementById('nav-links-vip').style.display = 'flex';
+      document.getElementById('nav-cta-vip').style.display = 'inline-block';
+    } else if (page === 'blog') {
+      document.getElementById('page-blog').classList.add('active');
+      document.getElementById('page-blog').style.display = 'block';
+      document.getElementById('tab-vip').classList.add('active');
+      document.getElementById('nav-links-vip').style.display = 'flex';
+      document.getElementById('nav-cta-vip').style.display = 'inline-block';
+      document.getElementById('blog-index').style.display = 'block';
+      ['post1','post2'].forEach(id => { document.getElementById('blog-'+id).style.display = 'none'; });
+    } else if (page === 'shop') {
+      document.getElementById('page-shop').classList.add('active');
+      document.getElementById('page-shop').style.display = 'block';
+      document.getElementById('tab-shop').classList.add('active');
+    } else if (page === 'informe') {
+      document.getElementById('page-informe').style.display = 'block';
+      document.getElementById('tab-informe').classList.add('active');
+      document.getElementById('nav-links-vip').style.display = 'flex';
+      document.getElementById('nav-cta-vip').style.display = 'inline-block';
+    }
+    window.scrollTo(0,0);
+  }
+
+  function showBlog(postId) {
+    showPage('blog');
+    document.getElementById('blog-index').style.display = 'none';
+    ['post1','post2'].forEach(id => { document.getElementById('blog-'+id).style.display = 'none'; });
+    document.getElementById('blog-'+postId).style.display = 'block';
+    window.scrollTo(0,0);
+    return false;
+  }
+
+  function toggleIdx(head) {
+    const items = head.nextElementSibling;
+    items.classList.toggle('open');
+  }
+
+  // ── SCROLL REVEAL ──────────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(
+    '.device-card, .pack-card, .why-card, .blog-card, .ship-card, .qa-item, ' +
+    '.biz-card, .tier-cell, .sector-card, .emp-pack-card, .emp-step'
+  ).forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
